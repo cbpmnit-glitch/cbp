@@ -41,15 +41,13 @@ const Navbar = () => {
 
 
   const navItems = [
-    { name: "About Us" },
-    { name: "TimeLine" },
-    { name: "Workshops", dropdown: ["Online Workshops", "Detox Plans", "Recordings"] },
-    { name: "Books", dropdown: ["Free eBooks", "Physical Books"] },
-    { name: "Success Stories", dropdown: ["Kitchen Tools", "Natural Supplements"] },
-    { name: "Meet the Team" },
-    { name: "Info", dropdown: ["Health Blogs", "Spirituality", "Recipes"] },
+    { name: "Home" },
+    { name: "Store" },
+    { name: "Timeline" },
+    { name: "History", dropdown: ["Online Workshops", "Detox Plans", "Recordings"] },
+    { name: "gallary", dropdown: ["Free eBooks", "Physical Books"] },
+    { name: "Organizers", dropdown: ["Kitchen Tools", "Natural Supplements"] }
   ];
-
   const toggleDropdown = (name) => {
     setOpenDropdown(openDropdown === name ? null : name);
   };
