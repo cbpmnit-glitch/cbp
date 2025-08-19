@@ -1,5 +1,6 @@
 import React from "react";
 import EducatorCard from "./EducatorCard";
+import nehaImage from "./images/neha.png";
 
 const educators = [
   {
