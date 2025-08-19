@@ -85,7 +85,7 @@ const App = () => {
             <div>
               <p className="font-bold mb-2">Community</p>
               <ul className="space-y-1">
-                <li>Satvic Youth</li>
+                <li><a href="/Terms & Conditions.html">Terms & Conditions</a></li>
                 <li>Meet The Team</li>
                 <li>Satvic Stories</li>
                 <li>Blogs</li>
