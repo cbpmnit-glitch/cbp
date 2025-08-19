@@ -5,7 +5,7 @@ const TandC = () => {
   return (
     <>
     <Navbar/>
-    <div>
+    <div classname="m-10">
     
           <h1><b>Terms & Conditions</b></h1>
     <p>
