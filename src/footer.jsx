@@ -5,7 +5,7 @@ import { BiSolidSend } from "react-icons/bi";
 import { IoIosGlobe } from "react-icons/io";
 import { Link } from "react-router-dom";
 
-const App = () => {
+const Footer = () => {
   return (
     <div id="Info" className="w-full  overflow-hidden font-sans">
       {/* ===== Hero Section above the Wave Animation (Floating)  === */}
@@ -147,4 +147,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Footer;
