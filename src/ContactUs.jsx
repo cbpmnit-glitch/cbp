@@ -1,10 +1,9 @@
 import React from 'react'
-import Navbar from './navbar'
-
+import Navbar from './navbar';
 const ContactUs = () => {
-  <Navbar/>
   return (
-    
+    <>
+      <Navbar />
     <div id="ContactUs" className="p-6">
       <h1 className="text-2xl font-bold mb-4">Contact Us</h1>
       <p className="mb-2">Last updated on Aug 17th 2025</p>
@@ -27,6 +26,7 @@ const ContactUs = () => {
         <strong>E-Mail ID:</strong> cbpmnit@gmail.com
       </p>
     </div>
+    </>
   )
 }
 
