@@ -1,11 +1,12 @@
 import React from "react";
 import EducatorCard from "./EducatorCard";
+import nehaImage from "./images/neha.png";
 
 const educators = [
   {
     name: "Subah Saraf",
     role: "Co-founder",
-    image: "./images/neha.png",
+    image: nehaImage,
     bgColor: "#d5ede8"
   },
   {
