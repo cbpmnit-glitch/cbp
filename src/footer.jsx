@@ -86,11 +86,11 @@ const App = () => {
             <div>
               <p className="font-bold mb-2">Community</p>
               <ul className="space-y-1">
-                <li><a href="/TermsAndConditions.html">Terms & Conditions</a></li>
+                <li><Link to="/T&C-Policy">Terms & Conditions</Link></li>
                 <li><Link to="/Private-Policy">Privacy policy</Link></li>
-                <li></li>
+                <li><Link to="/Shipping-Policy">Shipping Policy</Link></li>
                 <li><Link to="/contact-us">Contact Us</Link></li>
-                <li><a href="/Cancellation & Refund.html">Cancellation & Refund</a></li>
+                <li><Link to="/Cancellation-Refund">Cancellation & Refund</Link></li>
               </ul>
             </div>
           </motion.div>

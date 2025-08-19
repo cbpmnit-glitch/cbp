@@ -15,6 +15,9 @@ import Footer from "./footer";
 import Timeline from "./Timeline";
 import ContactUs from "./ContactUs";
 import PrivatePolicy from "./PrivacyPolicy";
+import TandC from "./TandC";
+import Cancellation from "./Cancellation";
+import Shipping from "./Shipping";
 
 // Main landing page component
 const HomePage = () => {
@@ -45,6 +48,15 @@ function App() {
 
         {/* Privacy Policy page */}
         <Route path="/Private-Policy" element={<PrivatePolicy />} />
+
+         {/*T&C page */}
+        <Route path="/T&C-Policy" element={<TandC />} />
+
+        {/*Cancellation page */}
+        <Route path="/Cancellation-Refund" element={<Cancellation />} />
+        
+        {/*Cancellation page */}
+        <Route path="/Shipping-Policy" element={<Shipping />} />
       </Routes>
     </Router>
   );
