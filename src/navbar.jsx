@@ -41,12 +41,11 @@ const Navbar = () => {
 
 
   const navItems = [
-    { name: "About Us" },
-    { name: "TimeLine" },
-    { name: "Workshops", dropdown: ["Online Workshops", "Detox Plans", "Recordings"] },
-    { name: "Books", dropdown: ["Free eBooks", "Physical Books"] },
-    { name: "Success Stories", dropdown: ["Kitchen Tools", "Natural Supplements"] },
-    { name: "Meet the Team" },
+    { name: "Home" },
+    { name: "History" },
+    { name: "Store", dropdown: ["Online Workshops", "Detox Plans", "Recordings"] },
+    { name: "Organizers", dropdown: ["Free eBooks", "Physical Books"] },
+    { name: "Feedback ", dropdown: ["Kitchen Tools", "Natural Supplements"] },
     { name: "Info", dropdown: ["Health Blogs", "Spirituality", "Recipes"] },
   ];
 
