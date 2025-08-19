@@ -6,7 +6,7 @@ const educators = [
   {
     name: "Subah Saraf",
     role: "Co-founder",
-    image: neha,
+    image: "https://webnew.satvicmovement.org/images/meet-the-team/team/rajat.webp",
     bgColor: "#d5ede8"
   },
   {
