@@ -2,8 +2,13 @@ import React, { useEffect, useState } from "react";
 import { LiaGripHorizontalSolid } from "react-icons/lia";
 import logo from "./images/Cbp_logo_bgremoved.png";
 import { IoMdClose } from "react-icons/io";
+import { useNavigate } from "react-router-dom";
+
+
+
 
 const Navbar = () => {
+  const navigate = useNavigate();
   const [openDropdown, setOpenDropdown] = useState(null);
   const [activeSection, setActiveSection] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -19,14 +24,19 @@ const Navbar = () => {
   }, []);
   // Smooth scroll function
   const handleMenuItemClick = (sectionId) => {
-    setActiveSection(sectionId);
-    setIsOpen(false);
+  setActiveSection(sectionId);
+  setIsOpen(false);
 
+  if (sectionId === "Registration Form") {
+    navigate("/registration");   // go to registration page
+  } else {
     const section = document.getElementById(sectionId);
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
     }
-  };
+  }
+};
+
 
   // Close sidebar when scrolling
   useEffect(() => {
@@ -83,8 +93,10 @@ const Navbar = () => {
       </div>
 
       {/* Desktop Buy Tickets */}
-      <button className="hidden md:flex mr-20 bg-white text-[#015b98] font-semibold px-4 py-2 rounded-full hover:bg-gray-200 cursor-pointer transition duration-200">
-        Buy Tickets
+      <button
+      onClick={() => navigate("/registration")}
+      className="hidden md:flex mr-20 bg-white text-[#015b98] font-semibold px-4 py-2 rounded-full hover:bg-gray-200 cursor-pointer transition duration-200">
+      Register Now
       </button>
 
       {/* Mobile Menu Icon */}

@@ -18,6 +18,7 @@ import PrivatePolicy from "./PrivacyPolicy";
 import TandC from "./TandC";
 import Cancellation from "./Cancellation";
 import Shipping from "./Shipping";
+import RegistrationForm from "./RegistrationForm";
 
 // Main landing page component
 const HomePage = () => {
@@ -57,6 +58,8 @@ function App() {
         
         {/*Cancellation page */}
         <Route path="/Shipping-Policy" element={<Shipping />} />
+
+        <Route path="/registration" element={<RegistrationForm />} />
       </Routes>
     </Router>
   );
