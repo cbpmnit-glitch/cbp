@@ -9,7 +9,7 @@ const TandC = () => {
     
           <h1><b>Terms & Conditions</b></h1>
     <p>
-
+<br/>
 By accessing or using this website, or by purchasing from us, you agree to be bound by the following Terms and Conditions. Please read them carefully.
 
 <b>1. Amendments</b>
