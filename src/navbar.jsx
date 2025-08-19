@@ -44,7 +44,7 @@ const Navbar = () => {
     { name: "Home" },
     { name: "History" },
     { name: "Store", dropdown: ["Online Workshops", "Detox Plans", "Recordings"] },
-    { name: "Organizers", dropdown: ["Free eBooks", "Physical Books"] },
+    { name: "Meet the Team", dropdown: ["Free eBooks", "Physical Books"] },
     { name: "Contact Us", dropdown: ["Kitchen Tools", "Natural Supplements"] }
   ];
 
@@ -62,7 +62,7 @@ const Navbar = () => {
       }`}
     >
       {/* Logo */}
-      <img src={logo} alt="Logo" className="h-20 w-20 ml-20" />
+      <img src={logo} alt="Logo" className="h-20 w-20 " />
 
       {/* Desktop Menu */}
       <div className="hidden md:flex items-center space-x-8">
