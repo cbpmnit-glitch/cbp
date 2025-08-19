@@ -8,20 +8,18 @@ const PrivatePolicy = () => {
       <div className="p-6 max-w-4xl mx-auto">
         <h1 className="text-2xl font-bold mb-4">Privacy Policy</h1>
         <p className="mb-4">
-        
-        Privacy Policy for the CAPACITY BUILDING PROGRAM
 
-1. Introduction and Commitment to Privacy
+<b>1. Introduction and Commitment to Privacy</b>
 
 Welcome to the CAPACITY BUILDING PROGRAM. Your privacy is a cornerstone of our operations. This Privacy Policy provides a detailed overview of how we collect, use, process, and safeguard your personal information in connection with your registration for, and participation in, our 5-day soft skill development program ("the Program").
 
 This document is intended to be transparent and compliant with applicable data protection regulations. By registering for or participating in our Program, you acknowledge that you have read and understood the terms of this Privacy Policy.
 
-2. Information We Collect and Process
+<b>2. Information We Collect and Process</b>
 
 We collect information to facilitate your participation and enhance your experience. This information is categorized as follows:
 
-2.1. Information You Provide Directly to Us:
+<b>2.1. Information You Provide Directly to Us:</b>
 
 Identity & Contact Data: Your full name, email address, mobile phone number, and the name of your college or institution. This is essential for registration, communication, and identification.
 
@@ -31,19 +29,19 @@ Logistical Data: Physical address for the delivery of merchandise (e.g., T-shirt
 
 Engagement Data: Any feedback, opinions, or responses you voluntarily provide through surveys, feedback forms, or direct communication with our team.
 
-2.2. Information We Collect Automatically:
+<b>2.2. Information We Collect Automatically:</b>
 
 Technical & Usage Data: When you interact with our registration portal or digital resources, we may automatically collect your IP address, browser type and version, device identifiers, operating system, and information about your interaction with our services (e.g., pages visited, time spent). This helps us ensure security and optimize our platforms.
 
 Cookies and Similar Technologies: We may use cookies to enhance user experience, manage sessions, and perform analytics. You can control the use of cookies through your browser settings.
 
-2.3. Information Collected During the Event:
+<b>2.3. Information Collected During the Event:</b>
 
 Photography and Videography: For promotional and archival purposes, we may capture photographs and video footage during the Program. Your presence at the event constitutes your consent to be included in such media. If you have specific concerns, please contact our event staff.
 
 Testimonials: We may ask for voluntary written or video testimonials. Your explicit consent will be obtained before using these for marketing purposes.
 
-3. Purpose and Legal Basis for Using Your Information
+<b>3. Purpose and Legal Basis for Using Your Information</b>
 
 We process your personal data for specific, explicit, and legitimate purposes. We will not process your data in a manner that is incompatible with these purposes.
 
@@ -55,7 +53,7 @@ With Your Explicit Consent: Where required, we will ask for your consent to send
 
 To Comply with a Legal Obligation: We retain transactional records for financial auditing and tax compliance as required by Indian law.
 
-4. Data Security and Protection
+<b>4. Data Security and Protection</b>
 
 We have implemented robust technical, administrative, and physical security measures designed to protect your personal information from unauthorized access, use, alteration, or disclosure. These measures include:
 
@@ -67,7 +65,7 @@ Secure Infrastructure: Our data is stored on secure servers with state-of-the-ar
 
 Despite these measures, no method of transmission over the Internet or method of electronic storage is 100% secure. Therefore, while we strive to use commercially acceptable means to protect your personal information, we cannot guarantee its absolute security.
 
-5. Third-Party Disclosures and Data Sharing
+<b>5. Third-Party Disclosures and Data Sharing</b>
 
 We do not sell, rent, or trade your personal information to third parties for their marketing purposes. We may share your data with the following categories of trusted third-party service providers who assist us in delivering the Program:
 
@@ -81,7 +79,7 @@ Event Collaborators & Certifying Bodies: Only where necessary for joint program 
 
 All our third-party partners are contractually obligated to implement and maintain a level of data protection that is consistent with this policy and applicable laws.
 
-6. Your Data Protection Rights
+<b>6. Your Data Protection Rights</b>
 
 You have several rights concerning your personal data. Subject to legal and contractual limitations, you have the right to:
 
@@ -97,19 +95,19 @@ The Right to Object to Processing: Object to our processing of your data for rea
 
 To exercise any of these rights, please contact our privacy team at cbpmnit@gmail.com with the subject line "Data Subject Request." We will respond to your request within a reasonable timeframe.
 
-7. Data Retention Policy
-
+<b>7. Data Retention Policy</b>
+          
 We will retain your personal data only for as long as is necessary to fulfill the purposes for which it was collected, including for the purposes of satisfying any legal, accounting, or reporting requirements. After the conclusion of the Program and a reasonable post-event period, data that is no longer required will be securely deleted or anonymized.
 
-8. Children's Privacy
+<b>8. Children's Privacy</b>
 
 The CAPACITY BUILDING PROGRAM is intended for a professional and adult audience. We do not knowingly collect personal information from individuals under the age of 18. If we become aware that we have inadvertently collected such data, we will take steps to delete it promptly.
 
-9. Updates to This Privacy Policy
+<b>9. Updates to This Privacy Policy</b>
 
 We may update this Privacy Policy from time to time to reflect changes in our practices or for other operational, legal, or regulatory reasons. We will notify you of any material changes by posting the new policy on our event page and, where feasible, via email.
 
-10. Contact Us for Privacy Concerns
+<b>10. Contact Us for Privacy Concerns</b>
 
 If you have any questions, concerns, or complaints regarding this Privacy Policy or our data handling practices, please do not hesitate to contact us.
 
