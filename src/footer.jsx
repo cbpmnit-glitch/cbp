@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { FaYoutube, FaInstagram, FaFacebook } from "react-icons/fa";
 import { BiSolidSend } from "react-icons/bi";
 import { IoIosGlobe } from "react-icons/io";
+import { Link } from "react-router-dom";
 
 const App = () => {
   return (
