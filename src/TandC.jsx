@@ -5,7 +5,7 @@ const TandC = () => {
   return (
     <>
     <Navbar/>
-    <div classname="mr:10 ml:10">
+    <div style={{margin:'20'}}>
     
           <h1><b>Terms & Conditions</b></h1>
     <p>
