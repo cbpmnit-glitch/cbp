@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { FaYoutube, FaInstagram, FaFacebook } from "react-icons/fa";
 import { BiSolidSend } from "react-icons/bi";
 import { IoIosGlobe } from "react-icons/io";
+import { Link } from "react-router-dom";
 const App = () => {
   return (
     <div id="Info" className="w-full  overflow-hidden font-sans">
@@ -87,7 +88,7 @@ const App = () => {
                 <li><a href="/TermsAndConditions.html">Terms & Conditions</a></li>
                 <li><a href="/">Privacy policies</a></li>
                 <li><a href="/shipping policy">Shipping Policy</a></li>
-                <li><a href="ContactUs.jsx">Contact Us</a></li>
+                <li><Link to="/contact-us">Contact Us</Link></li>
                 <li><a href="/Cancellation & Refund.html">Cancellation & Refund</a></li>
               </ul>
             </div>
