@@ -44,8 +44,8 @@ const Navbar = () => {
     { name: "Home" },
     { name: "Store" },
     { name: "Timeline" },
-    { name: "gallary", dropdown: ["Free eBooks", "Physical Books"] },
-    { name: "Organizers", dropdown: ["Kitchen Tools", "Natural Supplements"] }
+    { name: "Meet The Team", dropdown: ["Free eBooks", "Physical Books"] },
+    { name: "Contact Us", dropdown: ["Kitchen Tools", "Natural Supplements"] }
   ];
   const toggleDropdown = (name) => {
     setOpenDropdown(openDropdown === name ? null : name);
@@ -61,7 +61,7 @@ const Navbar = () => {
       }`}
     >
       {/* Logo */}
-      <img src={logo} alt="Logo" className="h-20 w-20 ml-20" />
+      <img src={logo} alt="Logo" className="h-20 w-20 md:ml-20" />
 
       {/* Desktop Menu */}
       <div className="hidden md:flex items-center space-x-8">

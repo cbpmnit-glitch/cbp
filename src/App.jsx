@@ -15,7 +15,7 @@ import Footer from "./footer";
 import Timeline from "./Timeline";
 
 // Pages
-import ContactUs from "./pages/ContactUs";
+import ContactUs from "./ContactUs";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsAndConditions from "./pages/TermsAndConditions";
 import ShippingPolicy from "./pages/ShippingPolicy";
