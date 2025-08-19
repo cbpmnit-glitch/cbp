@@ -44,7 +44,6 @@ const Navbar = () => {
     { name: "Home" },
     { name: "Store" },
     { name: "Timeline" },
-    { name: "History", dropdown: ["Online Workshops", "Detox Plans", "Recordings"] },
     { name: "gallary", dropdown: ["Free eBooks", "Physical Books"] },
     { name: "Organizers", dropdown: ["Kitchen Tools", "Natural Supplements"] }
   ];
