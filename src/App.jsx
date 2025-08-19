@@ -19,6 +19,7 @@ import TandC from "./TandC";
 import Cancellation from "./Cancellation";
 import Shipping from "./Shipping";
 import RegistrationForm from "./RegistrationForm";
+import Attendance from "./Attendance";
 
 // Main landing page component
 const HomePage = () => {
@@ -60,6 +61,9 @@ function App() {
         <Route path="/Shipping-Policy" element={<Shipping />} />
 
         <Route path="/registration" element={<RegistrationForm />} />
+
+        <Route path="/attendance" element={<Attendance />} />
+
       </Routes>
     </Router>
   );
