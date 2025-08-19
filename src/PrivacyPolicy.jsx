@@ -5,7 +5,7 @@ const PrivatePolicy = () => {
   return (
     <>
     <Navbar/>
-    <div id="ContactUs" className="p-6">
+    <div id="PrivatePolicy" className="p-6">
         <p>
     Privacy Policy for the CAPACITY BUILDING PROGRAM
 
