@@ -4,6 +4,7 @@ import { FaYoutube, FaInstagram, FaFacebook } from "react-icons/fa";
 import { BiSolidSend } from "react-icons/bi";
 import { IoIosGlobe } from "react-icons/io";
 import { Link } from "react-router-dom";
+
 const App = () => {
   return (
     <div id="Info" className="w-full  overflow-hidden font-sans">

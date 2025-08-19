@@ -14,7 +14,7 @@ import EducatorCard from "./EducatorCard";
 import Footer from "./footer";
 import Timeline from "./Timeline";
 import ContactUs from "./ContactUs";
-import PrivatePolicy from "./PrivatePolicy";
+import PrivatePolicy from "./PrivacyPolicy";
 
 // Main landing page component
 const HomePage = () => {
