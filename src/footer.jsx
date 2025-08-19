@@ -71,7 +71,7 @@ const App = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div>
+          <div>
               <p className="font-bold mb-2">Explore</p>
               <ul className="space-y-1 ">
                 <li>About Us</li>
@@ -85,13 +85,13 @@ const App = () => {
             <div>
               <p className="font-bold mb-2">Community</p>
               <ul className="space-y-1">
-                <li><a href="/TermsAndConditions.html">Terms & Conditions</a></li>
-                <li><a href="/privacy policy.html">Privacy policies</a></li>
-                <li><a href="shipping policy">Shipping Policy</a></li>
-                <li><a href="/Contact us.html">Contact Us</a></li>
-                <li><a href="/Cancellation & Refund.html">Cancellation & Refund</a></li>
+                <li><Link to="/terms-and-conditions">Terms & Conditions</Link></li>
+                <li><Link to="/privacy-policy">Privacy Policy</Link></li>
+                <li><Link to="/shipping-policy">Shipping Policy</Link></li>
+                <li><Link to="/contact-us">Contact Us</Link></li>
+                <li><Link to="/cancellation-refund">Cancellation & Refund</Link></li>
               </ul>
-            </div>
+          </div>
           </motion.div>
 
           {/* Right Section - Newsletter */}
