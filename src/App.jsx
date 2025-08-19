@@ -43,7 +43,8 @@ function App() {
         {/* Contact Us page */}
         <Route path="/contact-us" element={<ContactUs />} />
 
-         <Route path="/Private-Policy" element={<PrivatePolicy />} />
+        {/* Privacy Policy page */}
+        <Route path="/Private-Policy" element={<PrivatePolicy />} />
       </Routes>
     </Router>
   );

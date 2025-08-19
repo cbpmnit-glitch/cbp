@@ -86,7 +86,7 @@ const App = () => {
               <p className="font-bold mb-2">Community</p>
               <ul className="space-y-1">
                 <li><a href="/TermsAndConditions.html">Terms & Conditions</a></li>
-                <li><Link to="/Private-Policy">Privacy policies</Link></li>
+                <li><Link to="/Private-Policy">Privacy policy</Link></li>
                 <li><a href="/shipping policy">Shipping Policy</a></li>
                 <li><Link to="/contact-us">Contact Us</Link></li>
                 <li><a href="/Cancellation & Refund.html">Cancellation & Refund</a></li>
