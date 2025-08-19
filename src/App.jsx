@@ -1,7 +1,7 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 import "./App.css";
+
 import Navbar from "./navbar";
 import Container from "./container";
 import WorkshopCard from "./WorkshopCard";
@@ -13,23 +13,8 @@ import EducatorsSection from "./EducatorsSection";
 import EducatorCard from "./EducatorCard";
 import Footer from "./footer";
 import Timeline from "./Timeline";
-function App() {
-  return (
-    <>
-      <Navbar />
-      <Container />
-      <Timeline />
-      <UpcomingWorkshops />
-      <BookSection />
-      <StoriesSection />
-      <EducatorsSection />
-      <EducatorCard />
-      <Footer />
-    </>
-  );
-}
 
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+// Pages
 import ContactUs from "./pages/ContactUs";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsAndConditions from "./pages/TermsAndConditions";
@@ -39,14 +24,34 @@ import CancellationRefund from "./pages/CancellationRefund";
 function App() {
   return (
     <Router>
-      {/* Your footer and other content */}
+      <Navbar />
+
       <Routes>
+        {/* Homepage */}
+        <Route
+          path="/"
+          element={
+            <>
+              <Container />
+              <Timeline />
+              <UpcomingWorkshops />
+              <BookSection />
+              <StoriesSection />
+              <EducatorsSection />
+              <EducatorCard />
+            </>
+          }
+        />
+
+        {/* Other Pages */}
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
         <Route path="/shipping-policy" element={<ShippingPolicy />} />
         <Route path="/cancellation-refund" element={<CancellationRefund />} />
       </Routes>
+
+      <Footer />
     </Router>
   );
 }
