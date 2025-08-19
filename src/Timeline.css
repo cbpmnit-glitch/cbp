@@ -1,0 +1,94 @@
+/* Timeline Wrapper */
+#timeline {
+  position: relative;
+  padding: 20px 0;
+}
+
+/* Timeline Year Badge */
+.timeline-badge {
+  text-align: center;
+  margin: 20px auto;
+}
+.timeline-badge p {
+  background: #000;
+  color: #fff;
+  display: inline-block;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+/* Timeline Movement Rows */
+.timeline-movement {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+/* Left/Right Center Badges */
+.center-left,
+.center-right {
+  flex: 0 0 50px;
+}
+
+/* Timeline Item */
+.timeline-item {
+  position: relative;
+}
+.timeline-panel {
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.timeline-panel-ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Image + Text Wrap */
+.lefting-wrap {
+  float: left;
+  margin-right: 15px;
+}
+.righting-wrap {
+  overflow: hidden;
+}
+.img-wraping img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+/* Clearfix */
+.clear {
+  clear: both;
+}
+
+/* Typography */
+.importo {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #007bff;
+}
+.causale {
+  font-size: 0.95rem;
+  color: #555;
+}
+.text-muted {
+  font-size: 0.8rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .timeline-movement {
+    flex-direction: column;
+    text-align: center;
+  }
+  .lefting-wrap {
+    float: none;
+    margin: 0 auto 10px;
+  }
+}

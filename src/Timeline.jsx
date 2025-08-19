@@ -44,11 +44,19 @@ const Timeline = () => {
                 <p className="text-sm text-gray-100">{timeline.company}</p>
                 <p className="text-sm text-gray-400">{timeline.date}</p>
                 <p className="mt-2">{timeline.description}</p>
-                </div>
+                </div >
+        
                 {/* images and text  */}
-                <div className="flex items-center space-x-6 justify-center">
-                    <img src={speaker1} alt="" className="w-40 h-40 object-cover " />
+                <div className="flex items-center space-x-6 justify-center float-left  ">
+                    <img src={speaker1} alt="" className="w-25 h-40 mr-1 object-cover " />
                 </div>
+                <div className="flex items-center space-x-6 justify-center float-left ">
+                    <img src={speaker1} alt="" className="w-25 h-40 mr-2 object-cover " />
+                </div>
+                <div className="flex items-center space-x-6 justify-center float-left ">
+                    <img src={speaker1} alt="" className="w-25 h-40 object-cover " />
+                </div>
+                
               </div>
             </div>
           ))}
