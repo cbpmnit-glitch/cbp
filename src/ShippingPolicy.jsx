@@ -1,7 +1,7 @@
 import React from 'react'
 import Navbar from './navbar';
 import Footer  from './footer'; 
-const ContactUs = () => {
+const ShippingPolicy = () => {
   return (
     <>
     <Navbar/>
@@ -13,4 +13,4 @@ const ContactUs = () => {
   )
 }
 
-export default ContactUs;
+export default ShippingPolicy;
