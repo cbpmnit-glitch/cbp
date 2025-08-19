@@ -52,7 +52,7 @@ Address: Malaviya National Institute of Technology (MNIT) Jaipur, Jawahar Lal Ne
 <b>5. Stay Connected on Social Media</b>
 <br/>
 For the latest program updates, speaker announcements, daily highlights, and exclusive behind-the-scenes content, be sure to follow our official social media channel.
-
+<br/>
 Instagram: @cbpmnit
 <br/><br/>
 <b>6. Feedback & Suggestions</b>
