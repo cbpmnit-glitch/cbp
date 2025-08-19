@@ -1,11 +1,13 @@
 import React from 'react'
-
-const PrivacyPolicy = () => {
+import Navbar from './navbar';
+import Footer  from './footer'; 
+const PrivatePolicy = () => {
   return (
-    <div>
-         <h1>Privacy Policy</h1>
-         <p>
-        Privacy Policy for the CAPACITY BUILDING PROGRAM
+    <>
+    <Navbar/>
+    <div id="ContactUs" className="p-6">
+        <p>
+    Privacy Policy for the CAPACITY BUILDING PROGRAM
 
 1. Introduction and Commitment to Privacy
 
@@ -112,10 +114,13 @@ If you have any questions, concerns, or complaints regarding this Privacy Policy
 Email: cbpmnit@gmail.com
 
 Subject Line: Privacy Policy Inquiry
-    </p>
+</p>
     </div>
+    <Footer />
+    </>
   )
 }
 
-export default PrivacyPolicy
+export default PrivatePolicy;
+
 
