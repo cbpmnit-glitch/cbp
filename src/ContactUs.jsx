@@ -27,7 +27,7 @@ const ContactUs = () => {
         <strong>E-Mail ID:</strong> cbpmnit@gmail.com
       </p>
     </div>
-    <Footer/>
+    <Footer />
     </>
   )
 }
