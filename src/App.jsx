@@ -45,9 +45,6 @@ function App() {
 
         {/* Privacy Policy page */}
         <Route path="/Private-Policy" element={<PrivatePolicy />} />
-
-        {/* shipping Policy page */}
-        <Route path="/Shipping-Policy" element={<ShippingPolicy />} />
       </Routes>
     </Router>
   );
