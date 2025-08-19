@@ -13,45 +13,35 @@ import EducatorsSection from "./EducatorsSection";
 import EducatorCard from "./EducatorCard";
 import Footer from "./footer";
 import Timeline from "./Timeline";
-
-// Pages
 import ContactUs from "./ContactUs";
-import PrivacyPolicy from "./pages/PrivacyPolicy";
-import TermsAndConditions from "./pages/TermsAndConditions";
-import ShippingPolicy from "./pages/ShippingPolicy";
-import CancellationRefund from "./pages/CancellationRefund";
+
+// Main landing page component
+const HomePage = () => {
+  return (
+    <>
+      <Navbar />
+      <Container />
+      <Timeline />
+      <UpcomingWorkshops />
+      <BookSection />
+      <StoriesSection />
+      <EducatorsSection />
+      <EducatorCard />
+      <Footer />
+    </>
+  );
+};
 
 function App() {
   return (
     <Router>
-      <Navbar />
-
       <Routes>
-        {/* Homepage */}
-        <Route
-          path="/"
-          element={
-            <>
-              <Container />
-              <Timeline />
-              <UpcomingWorkshops />
-              <BookSection />
-              <StoriesSection />
-              <EducatorsSection />
-              <EducatorCard />
-            </>
-          }
-        />
-
-        {/* Other Pages */}
+        {/* Home page */}
+        <Route path="/" element={<HomePage />} />
+        
+        {/* Contact Us page */}
         <Route path="/contact-us" element={<ContactUs />} />
-        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-        <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
-        <Route path="/shipping-policy" element={<ShippingPolicy />} />
-        <Route path="/cancellation-refund" element={<CancellationRefund />} />
       </Routes>
-
-      <Footer />
     </Router>
   );
 }
