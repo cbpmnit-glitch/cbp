@@ -45,8 +45,7 @@ const Navbar = () => {
     { name: "History" },
     { name: "Store", dropdown: ["Online Workshops", "Detox Plans", "Recordings"] },
     { name: "Organizers", dropdown: ["Free eBooks", "Physical Books"] },
-    { name: "Feedback ", dropdown: ["Kitchen Tools", "Natural Supplements"] },
-    { name: "Info", dropdown: ["Health Blogs", "Spirituality", "Recipes"] },
+    { name: "Contact Us", dropdown: ["Kitchen Tools", "Natural Supplements"] }
   ];
 
   const toggleDropdown = (name) => {
