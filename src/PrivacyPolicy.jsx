@@ -8,6 +8,7 @@ const PrivatePolicy = () => {
       <div className="p-6 max-w-4xl mx-auto">
         <h1 className="text-2xl font-bold mb-4">Privacy Policy</h1>
         <p className="mb-4">
+        
         Privacy Policy for the CAPACITY BUILDING PROGRAM
 
 1. Introduction and Commitment to Privacy
