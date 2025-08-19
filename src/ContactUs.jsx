@@ -1,3 +1,5 @@
+import React from 'react'
+
 const ContactUs = () => {
   return (
     <div id="ContactUs" className="p-6">
@@ -22,7 +24,10 @@ const ContactUs = () => {
         <strong>E-Mail ID:</strong> cbpmnit@gmail.com
       </p>
     </div>
-  );
-};
+  )
+}
 
 export default ContactUs;
+
+
+
