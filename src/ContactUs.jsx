@@ -1,6 +1,6 @@
 import React from 'react'
 import Navbar from './navbar';
-import { footer } from 'framer-motion/client';
+import { Footer } from 'framer-motion/client';
 const ContactUs = () => {
   return (
     <>
@@ -27,7 +27,7 @@ const ContactUs = () => {
         <strong>E-Mail ID:</strong> cbpmnit@gmail.com
       </p>
     </div>
-    <footer/>
+    <Footer/>
     </>
   )
 }
