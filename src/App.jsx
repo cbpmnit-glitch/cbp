@@ -14,6 +14,7 @@ import EducatorCard from "./EducatorCard";
 import Footer from "./footer";
 import Timeline from "./Timeline";
 import ContactUs from "./ContactUs";
+import PrivatePolicy from "./PrivatePolicy";
 
 // Main landing page component
 const HomePage = () => {
@@ -41,6 +42,8 @@ function App() {
         
         {/* Contact Us page */}
         <Route path="/contact-us" element={<ContactUs />} />
+
+         <Route path="/Private-Policy" element={<PrivatePolicy />} />
       </Routes>
     </Router>
   );
