@@ -5,7 +5,7 @@ const educators = [
   {
     name: "Subah Saraf",
     role: "Co-founder",
-    image: "/images/neha.png",
+    image: "./images/neha.png",
     bgColor: "#d5ede8"
   },
   {
