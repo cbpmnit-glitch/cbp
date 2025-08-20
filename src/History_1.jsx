@@ -77,10 +77,10 @@ function SpeakerCard({ name, role, img }) {
           loading="lazy"
         />
       </div>
-      <h3 className="mt-6 text-lg font-semibold tracking-tight text-white">
+      <h3 className="mt-6 text-lg font-semibold tracking-tight text-black">
         {name}
       </h3>
-      <p className="mt-1 text-sm text-gray-100 ">{role}</p>
+      <p className="mt-1 text-sm text-gray-800 ">{role}</p>
     </div>
   );
 }
