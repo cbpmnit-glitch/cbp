@@ -1,12 +1,13 @@
 import React from "react";
 import Navbar from "./navbar";
 import Footer from "./footer";
+import speaker_1 from "./images/speaker_1.png";
 
 const speakers = [
   {
     name: "Nandan Nilekani",
     role: "Co-Founder & Chairman, Infosys",
-    img: "https://www.ecell.in/esummit/images/speakers/nandan_nilekani.png",
+    img: speaker_1,
   },
   {
     name: "Anupam Mittal",
@@ -69,7 +70,7 @@ const speakers = [
 function SpeakerCard({ name, role, img }) {
   return (
     <div className="relative rounded-2xl bg-[#8fb8d3] p-6 shadow-xl ring-1 ring-white/10 transition-transform hover:-translate-y-1 hover:shadow-2xl">
-      <div className="mx-auto flex h-36 w-36 items-center justify-center overflow-hidden rounded-full bg-sky-700 p-1">
+      <div className="mx-auto flex h-45 w-45 items-center justify-center overflow-hidden rounded-full bg-sky-700 p-1">
         <img
           src={img}
           alt={name}
@@ -77,10 +78,10 @@ function SpeakerCard({ name, role, img }) {
           loading="lazy"
         />
       </div>
-      <h3 className="mt-6 text-lg font-semibold tracking-tight text-black">
+      <h3 className="mt-2 text-lg font-semibold tracking-tight text-black text-center">
         {name}
       </h3>
-      <p className="mt-1 text-sm text-gray-800 ">{role}</p>
+      <p className="mt-1 text-sm text-gray-800 text-center">{role}</p>
     </div>
   );
 }
