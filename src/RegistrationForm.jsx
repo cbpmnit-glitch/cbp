@@ -13,30 +13,49 @@ export default function RegistrationForm() {
 
   // Handle payment toggle
   useEffect(() => {
-    if (paymentMethod === "cash") {
-      setSubmitEnabled(true);
-    } else if (paymentMethod === "online") {
-      setSubmitEnabled(false);
-    } else {
-      setSubmitEnabled(false);
-    }
-  }, [paymentMethod]);
+  if (paymentMethod === "cash") {
+    setSubmitEnabled(true);
+  } else if (paymentMethod === "online") {
+    setSubmitEnabled(false); // keep disabled until Razorpay succeeds
+  } else {
+    setSubmitEnabled(false);
+  }
+}, [paymentMethod]);
+
 
   // When Pay Online clicked → enable submit
-  const handlePayNow = () => {
+  // When Pay Online clicked → enable submit
+// When Pay Online clicked → enable submit
+const handlePayNow = () => {
   const options = {
-    key: "rzp_test_XXXXXX", // 🔑 replace with your Razorpay key
-    amount: 150 * 100, // Rs.150 in paise
+    key: "rzp_live_R7WlLJ9Id7QZXL", // 🔑 Replace with your real Razorpay key
+    amount: 100, // ₹1 = 100 paise
     currency: "INR",
     name: "College Event",
     description: "Registration Payment",
-    handler: function () {
-      setSubmitEnabled(true); // ✅ enable submit only after payment
-      alert("Payment successful! Now you can submit the form.");
+    handler: function (response) {
+      alert("✅ Payment successful! Submitting your form...");
+
+      // Save Razorpay Payment ID inside a hidden input
+      const hiddenInput = document.createElement("input");
+      hiddenInput.type = "hidden";
+      hiddenInput.name = "razorpay_payment_id";
+      hiddenInput.value = response.razorpay_payment_id;
+      document.querySelector("form").appendChild(hiddenInput);
+
+      // Trigger React form submission
+      document.querySelector("form").dispatchEvent(
+        new Event("submit", { bubbles: true, cancelable: true })
+      );
+
+      // After form submission, redirect to success page
+      setTimeout(() => {
+        window.location.href = "/payment-success";
+      }, 1000);
     },
     modal: {
       ondismiss: function () {
-        alert("Payment not completed. Please try again.");
+        alert("❌ Payment was not completed. Please try again.");
       },
     },
     theme: { color: "#3399cc" },
@@ -47,16 +66,33 @@ export default function RegistrationForm() {
 };
 
 
+
   // Restrict phone number input
   const handlePhoneChange = (e) => {
     let val = e.target.value.replace(/[^0-9]/g, "").slice(0, 10);
     e.target.value = val;
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert("Form submitted successfully!");
-  };
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  const formData = new FormData(e.target);
+  const data = Object.fromEntries(formData.entries());
+
+  try {
+    await fetch("YOUR_GOOGLE_SCRIPT_URL", {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: { "Content-Type": "application/json" },
+    });
+
+    alert("✅ Form submitted successfully!");
+    window.location.href = "/payment-success";  // Redirect AFTER saving
+  } catch (error) {
+    console.error("Error submitting form:", error);
+    alert("❌ Something went wrong while submitting the form.");
+  }
+};
+
 
   return (
     <div className="max-w-2xl mx-auto mt-10 bg-white p-8 rounded-xl shadow-lg border-t-8 border-blue-600">
@@ -224,15 +260,10 @@ export default function RegistrationForm() {
         {paymentMethod === "online" && (
           <div className="mt-2">
             <p className="text-blue-900 font-bold">Pay ₹1 Online</p>
-            <a
-              href="https://rzp.io/rzp/C9fHrmVC"
-              target="_blank"
-              rel="noreferrer"
-              className="inline-block bg-blue-600 text-white px-4 py-2 rounded-md font-bold hover:bg-blue-900"
-              onClick={handlePayNow}
-            >
+            <button type="button" onClick={handlePayNow} className="bg-blue-600 text-white px-4 py-2 rounded-md font-bold hover:bg-blue-900">
               Pay Online
-            </a>
+            </button>
+
           </div>
         )}
 

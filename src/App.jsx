@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import "./App.css";
-
+import { useEffect } from "react";   // ✅ import useEffect
 import Navbar from "./navbar";
 import Container from "./container";
 import WorkshopCard from "./WorkshopCard";
@@ -41,6 +41,17 @@ const HomePage = () => {
 };
 
 function App() {
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://checkout.razorpay.com/v1/checkout.js";
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+  
   return (
     <Router>
       <Routes>
@@ -65,9 +76,7 @@ function App() {
         <Route path="/registration" element={<RegistrationForm />} />
 
         <Route path="/attendance" element={<Attendance />} />
-
-        <Route path="/" element={<FormWithPayment />} />
-        <Route path="/attendance" element={<Attendance />} />
+    
         <Route path="/payment-success" element={<PaymentSuccess />} />
       </Routes>
     </Router>
