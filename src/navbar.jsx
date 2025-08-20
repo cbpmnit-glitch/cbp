@@ -142,10 +142,13 @@ const Navbar = () => {
             </li>
           ))}
           <li>
-            <button className="bg-white text-[#022951] font-semibold px-4 py-2 rounded-full hover:bg-gray-200 cursor-pointer transition duration-200 w-full hover:border-2 border-black p-4">
-              Buy Tickets
-            </button>
-          </li>
+  <button onClick={() => navigate("/registration")}
+    className="bg-white text-[#022951] font-semibold px-4 py-2 rounded-full hover:bg-gray-200 cursor-pointer transition duration-200 w-full hover:border-2 border-black p-4"
+  >
+    Register Now
+  </button>
+</li>
+
         </ul>
       </div>
     </nav>
