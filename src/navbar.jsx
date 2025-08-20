@@ -53,9 +53,9 @@ const Navbar = () => {
   const navItems = [
     { name: "Home" },
     { name: "Store" },
-    { name: "Timeline" },
+    { name: "History" },
     { name: "Meet The Team", dropdown: ["Free eBooks", "Physical Books"] },
-    { name: "Contact Us", dropdown: ["Kitchen Tools", "Natural Supplements"] }
+    { name: "About Us", dropdown: ["Kitchen Tools", "Natural Supplements"] }
   ];
   const toggleDropdown = (name) => {
     setOpenDropdown(openDropdown === name ? null : name);
