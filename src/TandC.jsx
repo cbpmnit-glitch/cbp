@@ -4,12 +4,11 @@ import Footer  from './footer';
 const TandC = () => {
   return (
     <>
-    <Navbar/>
-    <div style={{margin:'20'}}>
-    
-          <h1><b>Terms & Conditions</b></h1>
-    <p>
-<br/>
+      <Navbar />
+      <div className="p-6 max-w-4xl mx-auto">
+        <h1 className="text-2xl font-bold mb-4">Terms and Conditions</h1>
+        <p className="mb-4">
+
 By accessing or using this website, or by purchasing from us, you agree to be bound by the following Terms and Conditions. Please read them carefully.
 <br/><br/>
 <b>1. Amendments</b><br/>
