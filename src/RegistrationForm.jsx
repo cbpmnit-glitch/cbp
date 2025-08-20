@@ -28,7 +28,7 @@ export default function RegistrationForm() {
 // When Pay Online clicked → enable submit
 const handlePayNow = () => {
   const options = {
-    key: "rzp_live_R7WlLJ9Id7QZXL", // 🔑 Replace with your real Razorpay key
+    key: "rzp_live_R7WlLJ9Id7QZXL", // ✅ Your Razorpay key
     amount: 100, // ₹1 = 100 paise
     currency: "INR",
     name: "College Event",
@@ -36,22 +36,16 @@ const handlePayNow = () => {
     handler: function (response) {
       alert("✅ Payment successful! Submitting your form...");
 
-      // Save Razorpay Payment ID inside a hidden input
-      const hiddenInput = document.createElement("input");
-      hiddenInput.type = "hidden";
-      hiddenInput.name = "razorpay_payment_id";
-      hiddenInput.value = response.razorpay_payment_id;
-      document.querySelector("form").appendChild(hiddenInput);
+      // Collect form data
+      const formElement = document.querySelector("form");
+      const formData = new FormData(formElement);
+      const data = Object.fromEntries(formData.entries());
 
-      // Trigger React form submission
-      document.querySelector("form").dispatchEvent(
-        new Event("submit", { bubbles: true, cancelable: true })
-      );
+      // Add Razorpay payment ID
+      data.razorpay_payment_id = response.razorpay_payment_id;
 
-      // After form submission, redirect to success page
-      setTimeout(() => {
-        window.location.href = "/payment-success";
-      }, 1000);
+      // Call React's handleSubmit directly
+      handleSubmit(data, true); // true = redirect after submit
     },
     modal: {
       ondismiss: function () {
@@ -67,26 +61,31 @@ const handlePayNow = () => {
 
 
 
+
   // Restrict phone number input
   const handlePhoneChange = (e) => {
     let val = e.target.value.replace(/[^0-9]/g, "").slice(0, 10);
     e.target.value = val;
   };
 
-const handleSubmit = async (e) => {
-  e.preventDefault();
-  const formData = new FormData(e.target);
-  const data = Object.fromEntries(formData.entries());
-
+const handleSubmit = async (data, redirect = false) => {
+ 
   try {
-    await fetch("YOUR_GOOGLE_SCRIPT_URL", {
+    await fetch("https://script.google.com/macros/s/AKfycbw3FFtV2L_rbSMnxbJrCKqy4lM7pj1vZMUgWftO0n2hhUi92seKpBjj0hxY_0MreHwj/exec", 
+      {
       method: "POST",
+      mode: "no-cors",  // 👈 important for Google Apps Script
       body: JSON.stringify(data),
       headers: { "Content-Type": "application/json" },
     });
 
-    alert("✅ Form submitted successfully!");
-    window.location.href = "/payment-success";  // Redirect AFTER saving
+   // Since no-cors doesn’t give a real response, just assume success
+  alert("✅ Form submitted successfully!");
+
+   if (redirect) {
+      window.location.href = "/payment-success"; // Redirect if asked
+    }
+
   } catch (error) {
     console.error("Error submitting form:", error);
     alert("❌ Something went wrong while submitting the form.");
@@ -100,12 +99,20 @@ const handleSubmit = async (e) => {
         Registration Form
       </h2>
 
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <form
+    onSubmit={(e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries(formData.entries());
+    handleSubmit(data, paymentMethod === "cash");
+  }} className="space-y-4"
+>
         <div>
           <label className="font-bold text-blue-900 block">Full Name</label>
           <input
             type="text"
-            placeholder="Enter your full name"
+            name="fullName"
+            placeholder="Enter Your Full Name"
             required
             className="w-full p-2 border border-blue-300 rounded-md focus:ring-2 focus:ring-blue-600"
           />
@@ -117,7 +124,8 @@ const handleSubmit = async (e) => {
           </label>
           <input
             type="text"
-            placeholder="Enter your ID number"
+            name="idNumber"
+            placeholder="Enter Your ID Number"
             required
             className="w-full p-2 border border-blue-300 rounded-md focus:ring-2 focus:ring-blue-600"
           />
@@ -129,7 +137,8 @@ const handleSubmit = async (e) => {
           </label>
           <input
             type="tel"
-            placeholder="Enter your 10-digit number"
+            name="mobile"
+            placeholder="Enter Your 10-Digit Number"
             pattern="[0-9]{10}"
             maxLength="10"
             required
@@ -141,6 +150,7 @@ const handleSubmit = async (e) => {
         <div>
           <label className="font-bold text-blue-900 block">Course</label>
           <select
+          name="course"
             required
             className="w-full p-2 border border-blue-300 rounded-md focus:ring-2 focus:ring-blue-600"
           >
@@ -153,6 +163,7 @@ const handleSubmit = async (e) => {
         <div>
           <label className="font-bold text-blue-900 block">Department</label>
           <select
+            name="department"
             required
             className="w-full p-2 border border-blue-300 rounded-md focus:ring-2 focus:ring-blue-600"
           >
@@ -172,6 +183,7 @@ const handleSubmit = async (e) => {
         <div>
           <label className="font-bold text-blue-900 block">Year</label>
           <select
+            name="year"
             required
             className="w-full p-2 border border-blue-300 rounded-md focus:ring-2 focus:ring-blue-600"
           >
@@ -189,6 +201,7 @@ const handleSubmit = async (e) => {
             Day Scholar / Hosteller
           </label>
           <select
+            name="studentType"
             value={studentType}
             onChange={(e) => setStudentType(e.target.value)}
             required
@@ -204,6 +217,7 @@ const handleSubmit = async (e) => {
           <div>
             <label className="font-bold text-blue-900 block">Address</label>
             <input
+              name="dayAddress"
               type="text"
               value={dayAddress}
               onChange={(e) => setDayAddress(e.target.value)}
@@ -222,6 +236,7 @@ const handleSubmit = async (e) => {
               </label>
               <input
                 type="number"
+                name="hostelNum"
                 value={hostelNum}
                 onChange={(e) => setHostelNum(e.target.value)}
                 placeholder="Enter hostel number"
@@ -233,6 +248,7 @@ const handleSubmit = async (e) => {
               <label className="font-bold text-blue-900 block">Room Number</label>
               <input
                 type="text"
+                name="roomNum" 
                 value={roomNum}
                 onChange={(e) => setRoomNum(e.target.value)}
                 placeholder="Room no."
@@ -247,6 +263,7 @@ const handleSubmit = async (e) => {
           <label className="font-bold text-blue-900 block">Payment Method</label>
           <select
             value={paymentMethod}
+            name="paymentMethod"
             onChange={(e) => setPaymentMethod(e.target.value)}
             required
             className="w-full p-2 border border-blue-300 rounded-md focus:ring-2 focus:ring-blue-600"
@@ -274,6 +291,7 @@ const handleSubmit = async (e) => {
               Choose Boss Name
             </label>
             <select
+              name="bossName"
               value={bossName}
               onChange={(e) => setBossName(e.target.value)}
               required
@@ -293,6 +311,7 @@ const handleSubmit = async (e) => {
             Expectations from the event
           </label>
           <textarea
+            name="expectations"
             placeholder="Write your expectations..."
             required
             className="w-full p-2 border border-blue-300 rounded-md focus:ring-2 focus:ring-blue-600 min-h-[80px]"
