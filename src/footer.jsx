@@ -56,11 +56,11 @@ const App = () => {
                 target="_blank">
                 <FaInstagram className="text-xl hover:text-pink-400 " />
               </a>
-              <a href="https://www.youtube.com/@MNITJaipurIndia">
+              <a href="https://www.youtube.com/@MNITJaipurIndia"target="_blank">
                <FaYoutube className="text-xl hover:text-red-400" />
               </a>
              
-              <a href="https://www.mnit.ac.in/">
+              <a href="https://www.mnit.ac.in/" target="_blank">
               <IoIosGlobe  className="text-xl hover:text-green-400 " /></a>
             </div>
           </motion.div>

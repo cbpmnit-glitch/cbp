@@ -33,6 +33,9 @@ const Navbar = () => {
   else if(sectionId=="Home"){
      window.location.href = "https://cbpmnit.in";
   } 
+  else if (sectionId === "History") {
+  navigate("/History");   // ✅ React Router navigation
+  }
   else {
     const section = document.getElementById(sectionId);
     if (section) {
