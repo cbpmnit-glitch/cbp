@@ -223,9 +223,9 @@ export default function RegistrationForm() {
 
         {paymentMethod === "online" && (
           <div className="mt-2">
-            <p className="text-blue-900 font-bold">Pay ₹150 Online</p>
+            <p className="text-blue-900 font-bold">Pay ₹1 Online</p>
             <a
-              href="https://rzp.io/rzp/oQs3iqP"
+              href="https://rzp.io/rzp/C9fHrmVC"
               target="_blank"
               rel="noreferrer"
               className="inline-block bg-blue-600 text-white px-4 py-2 rounded-md font-bold hover:bg-blue-900"

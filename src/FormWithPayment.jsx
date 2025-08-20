@@ -32,7 +32,7 @@ const FormWithPayment = () => {
   const handlePayment = () => {
   const options = {
     key: "rzp_test_XXXXXX", // Replace with your Razorpay Key
-    amount: 150 * 100,
+    amount: 1 * 100,
     currency: "INR",
     name: "College Event",
     description: "Form Payment",
@@ -73,7 +73,7 @@ const FormWithPayment = () => {
       <input type="text" name="address" placeholder="Address" onChange={handleChange} />
 
       <button onClick={handlePayment} style={{ marginTop: 20, padding: 10 }}>
-        Pay ₹150 & Submit
+        Pay ₹1 & Submit
       </button>
     </div>
   );
