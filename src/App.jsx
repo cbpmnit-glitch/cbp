@@ -20,6 +20,8 @@ import Cancellation from "./Cancellation";
 import Shipping from "./Shipping";
 import RegistrationForm from "./RegistrationForm";
 import Attendance from "./Attendance";
+import FormWithPayment from "./FormWithPayment";
+import PaymentSuccess from "./PaymentSuccess";
 
 // Main landing page component
 const HomePage = () => {
@@ -64,6 +66,9 @@ function App() {
 
         <Route path="/attendance" element={<Attendance />} />
 
+        <Route path="/" element={<FormWithPayment />} />
+        <Route path="/attendance" element={<Attendance />} />
+        <Route path="/payment-success" element={<PaymentSuccess />} />
       </Routes>
     </Router>
   );

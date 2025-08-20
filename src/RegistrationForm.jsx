@@ -24,10 +24,28 @@ export default function RegistrationForm() {
 
   // When Pay Online clicked → enable submit
   const handlePayNow = () => {
-    setTimeout(() => {
-      setSubmitEnabled(true);
-    }, 2000);
+  const options = {
+    key: "rzp_test_XXXXXX", // 🔑 replace with your Razorpay key
+    amount: 150 * 100, // Rs.150 in paise
+    currency: "INR",
+    name: "College Event",
+    description: "Registration Payment",
+    handler: function () {
+      setSubmitEnabled(true); // ✅ enable submit only after payment
+      alert("Payment successful! Now you can submit the form.");
+    },
+    modal: {
+      ondismiss: function () {
+        alert("Payment not completed. Please try again.");
+      },
+    },
+    theme: { color: "#3399cc" },
   };
+
+  const rzp1 = new window.Razorpay(options);
+  rzp1.open();
+};
+
 
   // Restrict phone number input
   const handlePhoneChange = (e) => {
