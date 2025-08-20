@@ -29,7 +29,14 @@ const Navbar = () => {
 
   if (sectionId === "Registration Form") {
     navigate("/registration");   // go to registration page
-  } else {
+  }
+  else if(sectionId=="Home"){
+     window.location.href = "https://cbpmnit.in";
+  } 
+  else if (sectionId === "History") {
+  navigate("/History");   // ✅ React Router navigation
+  }
+  else {
     const section = document.getElementById(sectionId);
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });

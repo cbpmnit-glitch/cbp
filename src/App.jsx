@@ -22,7 +22,7 @@ import RegistrationForm from "./RegistrationForm";
 import Attendance from "./Attendance";
 import FormWithPayment from "./FormWithPayment";
 import PaymentSuccess from "./PaymentSuccess";
-
+import ESummitSpeakers from "./History_1";  // your history page
 // Main landing page component
 const HomePage = () => {
   return (
@@ -70,7 +70,7 @@ function App() {
         {/*Cancellation page */}
         <Route path="/Cancellation-Refund" element={<Cancellation />} />
         
-        {/*Cancellation page */}
+        {/*Shipping page */}
         <Route path="/Shipping-Policy" element={<Shipping />} />
 
         <Route path="/registration" element={<RegistrationForm />} />
@@ -78,6 +78,8 @@ function App() {
         <Route path="/attendance" element={<Attendance />} />
     
         <Route path="/payment-success" element={<PaymentSuccess />} />
+
+        <Route path="/History" element={<ESummitSpeakers />} />
       </Routes>
     </Router>
   );
