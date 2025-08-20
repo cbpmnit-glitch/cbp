@@ -86,11 +86,11 @@ const App = () => {
             <div>
               <p className="font-bold mb-2">Community</p>
               <ul className="space-y-1">
-                <li><Link to="/T&C-Policy">Terms & Conditions</Link></li>
-                <li><Link to="/Private-Policy">Privacy policy</Link></li>
-                <li><Link to="/Shipping-Policy">Shipping Policy</Link></li>
-                <li><Link to="/contact-us">Contact Us</Link></li>
-                <li><Link to="/Cancellation-Refund">Cancellation & Refund</Link></li>
+                <li><Link to="/T&C-Policy"  onClick={() => window.scrollTo(0, 0)}>Terms & Conditions</Link></li>
+                <li><Link to="/Private-Policy"  onClick={() => window.scrollTo(0, 0)}>Privacy policy</Link></li>
+                <li><Link to="/Shipping-Policy"  onClick={() => window.scrollTo(0, 0)}>Shipping Policy</Link></li>
+                <li><Link to="/contact-us"  onClick={() => window.scrollTo(0, 0)}>Contact Us</Link></li>
+                <li><Link to="/Cancellation-Refund"  onClick={() => window.scrollTo(0, 0)}>Cancellation & Refund</Link></li>
               </ul>
             </div>
           </motion.div>
