@@ -36,6 +36,9 @@ const Navbar = () => {
   else if (sectionId === "History") {
   navigate("/History");   // ✅ React Router navigation
   }
+  else if (sectionId === "Store") {
+  navigate("/Store");   // ✅ React Router navigation
+  }
   else {
     const section = document.getElementById(sectionId);
     if (section) {

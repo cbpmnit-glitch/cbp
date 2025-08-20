@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
 import "./App.css";
 import { useEffect } from "react";   // ✅ import useEffect
 import Navbar from "./navbar";
@@ -23,6 +22,7 @@ import Attendance from "./Attendance";
 import FormWithPayment from "./FormWithPayment";
 import PaymentSuccess from "./PaymentSuccess";
 import ESummitSpeakers from "./History_1";  // your history page
+import ProductPage from "./Store";
 // Main landing page component
 const HomePage = () => {
   return (
@@ -80,6 +80,9 @@ function App() {
         <Route path="/payment-success" element={<PaymentSuccess />} />
 
         <Route path="/History" element={<ESummitSpeakers />} />
+
+        <Route path="/Store" element={<ProductPage />} />
+
       </Routes>
     </Router>
   );
