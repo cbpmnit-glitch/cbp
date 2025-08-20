@@ -5,8 +5,8 @@ import speaker_1 from "./images/speaker_1.png";
 
 const speakers = [
   {
-    name: "Nandan Nilekani",
-    role: "Co-Founder & Chairman, Infosys",
+    name: "Amogh Lila Prabhu",
+    role: "Youth mentor, ISKCON vice president",
     img: speaker_1,
   },
   {
@@ -69,8 +69,8 @@ const speakers = [
 
 function SpeakerCard({ name, role, img }) {
   return (
-    <div className="relative rounded-2xl bg-[#8fb8d3] p-6 shadow-xl ring-1 ring-white/10 transition-transform hover:-translate-y-1 hover:shadow-2xl">
-      <div className="mx-auto flex h-45 w-45 items-center justify-center overflow-hidden rounded-full bg-sky-700 p-1">
+    <div className="relative rounded-2xl bg-[#8fb8d3] p-6 shadow-xl transition-transform hover:-translate-y-1 hover:shadow-2xl">
+      <div className="mx-auto flex h-45 w-45 items-center justify-center overflow-hidden rounded-full bg-sky-700 ">
         <img
           src={img}
           alt={name}
