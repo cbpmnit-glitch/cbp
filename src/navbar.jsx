@@ -146,7 +146,7 @@ const Navbar = () => {
 
       {/* Mobile Sidebar */}
       <div
-        className={`fixed top-0 w-3/6 right-0 h-full bg-[#03386d]  p-6 z-40 transform duration-300 ease-in-out ${
+        className={`fixed top-0 w-3/6 right-0 h-200 bg-[#03386d]  p-6 z-40 transform duration-300 ease-in-out ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
