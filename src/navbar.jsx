@@ -20,7 +20,7 @@ const Navbar = () => {
     const THRESHOLD =2; 
     const onScroll = () => {
       const cur = window.scrollY;
-      if (cur <=20) {
+      if (cur <=50) {
         setShowNavbar(true);
       } else if (cur < lastScrollY.current - THRESHOLD) {
         setShowNavbar(true); // scrolling up
@@ -94,7 +94,7 @@ const Navbar = () => {
         fixed top-0 left-0 w-full z-50
         transform transition-transform duration-300 will-change-transform
         ${isScrolled
-          ? "bg-[#015b98] bg-opacity-50 backdrop-blur-md shadow-md"
+          ? "bg-[#015b98] text-white "
           : "bg-[#015b98] text-white"}
         ${showNavbar ? "translate-y-0" : "-translate-y-full"}`}
     >
@@ -146,7 +146,7 @@ const Navbar = () => {
 
       {/* Mobile Sidebar */}
       <div
-        className={`fixed top-0 w-3/6 right-0 h-full bg-[#03386d] text-white p-6 z-40 transform transition-transform duration-300 ease-in-out ${
+        className={`fixed top-0 w-3/6 right-0 h-full bg-[#03386d]  p-6 z-40 transform duration-300 ease-in-out ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
