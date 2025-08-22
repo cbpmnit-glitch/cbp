@@ -17,7 +17,7 @@ const Navbar = () => {
 
   // Reveal on up-scroll, hide on down-scroll
   useEffect(() => {
-    const THRESHOLD = 2; // px
+    const THRESHOLD = 2; 
     const onScroll = () => {
       const cur = window.scrollY;
       if (cur <= 0) {
@@ -34,19 +34,7 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Also reveal when user presses Up/PageUp/Home (and hide on Down/PageDown/End)
-  useEffect(() => {
-    const onKey = (e) => {
-      if (["ArrowUp", "PageUp", "Home"].includes(e.key)) {
-        setShowNavbar(true);
-      }
-      if (["ArrowDown", "PageDown", "End"].includes(e.key)) {
-        setShowNavbar(false);
-      }
-    };
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  }, []);
+
 
   // Smooth scroll + navigation
   const handleMenuItemClick = (sectionId) => {
