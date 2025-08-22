@@ -56,7 +56,7 @@ const Navbar = () => {
     if (sectionId === "Registration Form") {
       navigate("/registration");
     } else if (sectionId === "Home") {
-      window.location.href = "https://cbpmnit.in";
+      navigate("/");
     } else if (sectionId === "History") {
       navigate("/History");
     } else if (sectionId === "Store") {
