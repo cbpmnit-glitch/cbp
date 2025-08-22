@@ -49,7 +49,7 @@ export default function ProductPage() {
 
       <div
         id="Store"
-        className="flex flex-col md:flex-row justify-center items-start p-6 md:p-12 gap-10"
+        className="flex mt-30 flex-col md:flex-row justify-center items-start p-6 md:p-12 gap-10"
       >
         {/* Left side - Product Image Slider */}
         <div className="w-full max-w-md mx-auto ">

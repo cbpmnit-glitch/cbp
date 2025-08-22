@@ -69,7 +69,7 @@ const speakers = [
 
 function SpeakerCard({ name, role, img }) {
   return (
-    <div className="relative rounded-2xl bg-[#8fb8d3] p-6 shadow-xl transition-transform hover:-translate-y-1 hover:shadow-2xl">
+    <div className=" relative rounded-2xl bg-[#8fb8d3] p-6 shadow-xl transition-transform hover:-translate-y-1 hover:shadow-2xl">
       <div className="mx-auto flex h-45 w-45 items-center justify-center overflow-hidden rounded-full bg-sky-700 ">
         <img
           src={img}
@@ -90,7 +90,7 @@ export default function ESummitSpeakers() {
   return (
     <>
       <Navbar />
-      <div className="min-h-screen w-full ">
+      <div className=" pt-15 min-h-screen w-full ">
         {/* Decorative background waves */}
         <div
           aria-hidden
