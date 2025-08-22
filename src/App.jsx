@@ -23,6 +23,7 @@ import FormWithPayment from "./FormWithPayment";
 import PaymentSuccess from "./PaymentSuccess";
 import ESummitSpeakers from "./History_1";  // your history page
 import ProductPage from "./Store";
+import { Component } from "lucide-react";
 // Main landing page component
 const HomePage = () => {
   return (
