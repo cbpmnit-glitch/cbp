@@ -114,6 +114,8 @@ If you have any questions, concerns, or complaints regarding this Privacy Policy
 Email: cbpmnit@gmail.com<br/>
 
 Subject Line: Privacy Policy Inquiry
+<br />
+Developer-Hardik Dhoot(2024uch1156)
         </p>
       </div>
       <Footer />

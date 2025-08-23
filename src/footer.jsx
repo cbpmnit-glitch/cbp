@@ -100,18 +100,17 @@ const App = () => {
         <hr className="my-6 border-white/30" />
 
         {/* Bottom Footer */}
-        <motion.div
-          className="flex flex-col md:flex-row justify-between text-xs text-white/80"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.6 }}
-        >
-          <p className="mb-2 ">© 2025 Capacity Builiding Program. All Rights Reserved.</p>
-          <div className="flex gap-4 mt-2 mb-2  md:mt-0">
-            <span>Terms & conditions</span>
-            <span>Privacy Policy</span>
-          </div>
-        </motion.div>
+<motion.div
+  className="flex flex-col md:flex-row justify-center md:justify-between text-xs text-white/80"
+  initial={{ opacity: 0 }}
+  whileInView={{ opacity: 1 }}
+  transition={{ duration: 0.5, delay: 0.6 }}
+>
+  <p className="mb-2 mt-0 text-center w-full">
+    © 2025 Capacity Building Program. All Rights Reserved.
+  </p>
+</motion.div>
+
       </div>
     </div>
   );
