@@ -67,7 +67,7 @@ const App = () => {
 
           {/* Center Section */}
           <motion.div
-            className="grid grid-cols-2 gap-6 text-sm"
+            className="grid grid-cols-2 text-sm"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -75,15 +75,14 @@ const App = () => {
             <div>
               <p className="font-bold mb-2">Explore</p>
               <ul className="space-y-1 ">
-                <li>About Us</li>
-                <li>Workshops</li>
-                <li>Books</li>
-                <li>Products</li>
-                <li>Satvic Yoga</li>
-                <li>Satvic Recipes</li>
+                <li><a href="/"> Home</a></li>
+                <li><a href="./Store">Store</a></li>
+                <li><a href="./History">History</a></li>
+                <li><a href="./MeetTheTeam">Meet The Team</a></li>
+                <li><a href="./About-us">About Us</a></li>
               </ul>
             </div>
-            <div>
+            <div >
               <p className="font-bold mb-2">Community</p>
               <ul className="space-y-1">
                 <li><Link to="/T&C-Policy"  onClick={() => window.scrollTo(0, 0)}>Terms & Conditions</Link></li>
@@ -93,36 +92,7 @@ const App = () => {
                 <li><Link to="/Cancellation-Refund"  onClick={() => window.scrollTo(0, 0)}>Cancellation & Refund</Link></li>
               </ul>
             </div>
-          </motion.div>
 
-          {/* Right Section - Newsletter */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
-            <p className="font-bold mb-4 text-sm ">Join our Newsletter</p>
-            <input
-              type="text"
-              placeholder="Enter Your Name"
-              className="mb-2 p-2 w-full rounded text-black border-2 border-amber-50"
-            />
-            <div className="mb-2 rounded relative border-2 border-amber-50">
-              <span className="absolute left-2 top-2 ">🇮🇳</span>
-              <input
-                type="text"
-                placeholder="India"
-                className="pl-8 p-2 w-full rounded text-black"
-              />
-            </div>
-            <input
-              type="email"
-              placeholder="Enter your e-mail "
-              className="mb-2 p-2 w-full rounded text-black border-2 border-amber-50"
-            />
-            <button className="flex items-center justify-center gap-2 bg-white text-[#015b98] py-2 px-4 rounded hover:bg-gray-100">
-              Send <BiSolidSend />
-            </button>
           </motion.div>
         </div>
 
