@@ -2,50 +2,117 @@ import React from "react";
 import Navbar from "./navbar";
 import Footer from "./footer";
 import EducatorCard from "./EducatorCard";
+import RakshitJain from "./images/RakshitJain.png";
+import AdityaRoy from "./images/AdityaRoy.png";
+import AryanRaj from "./images/AryanRaj.png";
+import BhaveshNarnoliya from "./images/BhaveshNarnoliya.png";
+import BhaveshYadav from "./images/BhaveshYadav.png";
+import CbpLogo from "./images/Cbp_logo_bgremoved.png";
+import DeekshaSinghal from "./images/DeekshaSinghal.png";
+import FooterLogo from "./images/footer_logo.png";
+import HaroonKaragwal from "./images/HaroonKaragwal.png";
+import HarshitKumar from "./images/HarshitKumar.png";
+import KanikaSinghal from "./images/KanikaSinghal.png";
+import KomalWankhede from "./images/KomalWankhede.png";
+import KoshalSharma from "./images/KoshalSharma.png";
+import KrishnaAgarwal from "./images/KrishnaAgarwal.png";
+import LogoBlue from "./images/logo_blue.png";
+import NaveenSaini from "./images/NaveenSaini.png";
+import Neha from "./images/neha.png";
+import NehaTripathi from "./images/NehaTripathi.png";
+import RushilSinha from "./images/RushilSinha.png";
+import Speaker1 from "./images/speaker_1.png";
+import Speaker1Alt from "./images/speaker1.jpeg";
+import TusharChoudhary from "./images/TusharChoudhary.png";
+import VimalDubey from "./images/VimalDubey.png";
+import VivekTapraniya from "./images/VivekTapraniya.png";
 
 const educatorsByYear = {
   "2rd Year Team": [
     {
-      name: "Radhika Gupta",
-      role: "Co-Leader of Yoga Wing",
-      image: "https://webnew.satvicmovement.org/images/meet-the-team/team/rajat.webp",
-      bgColor: "#c6957e",
+      name: "Hardik Dhoot",
+      role: "Technical secretary",
+      image: "",
     },
     {
-      name: "Radhika Gupta",
-      role: "Co-Leader of Yoga Wing",
-      image: "https://webnew.satvicmovement.org/images/meet-the-team/team/rajat.webp",
-      bgColor: "#c6957e",
+      name: "Parv Agarwal",
+      role: "Designing secretary",
+      image: "",
     },
     {
-      name: "Radhika Gupta",
+      name: "Tushar Choudhary",
       role: "Co-Leader of Yoga Wing",
-      image: "https://webnew.satvicmovement.org/images/meet-the-team/team/rajat.webp",
-      bgColor: "#c6957e",
+      image: TusharChoudhary,
     },
     {
-      name: "Radhika Gupta",
+      name: "Koshal Sharma",
       role: "Co-Leader of Yoga Wing",
-      image: "https://webnew.satvicmovement.org/images/meet-the-team/team/rajat.webp",
-      bgColor: "#c6957e",
+      image: KoshalSharma,
     },
     {
-      name: "Radhika Gupta",
+      name: "Neha Tripathi",
       role: "Co-Leader of Yoga Wing",
-      image: "https://webnew.satvicmovement.org/images/meet-the-team/team/rajat.webp",
-      bgColor: "#c6957e",
+      image: NehaTripathi,
     },
     {
-      name: "Radhika Gupta",
+      name: "Naveen Saini",
       role: "Co-Leader of Yoga Wing",
-      image: "https://webnew.satvicmovement.org/images/meet-the-team/team/rajat.webp",
-      bgColor: "#c6957e",
+      image: NaveenSaini,
     },
     {
-      name: "Akshay Jain",
+      name: "Krishna Agarwal",
       role: "Co-Leader of Yoga Wing",
-      image: "https://webnew.satvicmovement.org/images/meet-the-team/team/rajat.webp",
-      bgColor: "#c8a557",
+      image: KrishnaAgarwal,
+    },
+    {
+      name: "Rakshit Jain",
+      role: "Co-Leader of Yoga Wing",
+      image: RakshitJain,
+    },
+    {
+      name: "Komal Wankhede",
+      role: "Co-Leader of Yoga Wing",
+      image: KomalWankhede,
+    },
+    {
+      name: "Kanika Singhal",
+      role: "Co-Leader of Yoga Wing",
+      image: KanikaSinghal,
+    },
+    {
+      name: "Harshit Kumar",
+      role: "Co-Leader of Yoga Wing",
+      image: HarshitKumar,
+    },
+    {
+      name: "Haroon Karagwal",
+      role: "Co-Leader of Yoga Wing",
+      image: HaroonKaragwal,
+    },
+    {
+      name: "Deeksha Singhal",
+      role: "Co-Leader of Yoga Wing",
+      image: DeekshaSinghal,
+    },
+    {
+      name: "Bhavesh Yadav,",
+      role: "Co-Leader of Yoga Wing",
+      image: BhaveshYadav,
+    },
+    {
+      name: "Bhavesh Narnoliya,",
+      role: "Co-Leader of Yoga Wing",
+      image: BhaveshNarnoliya,
+    },
+    {
+      name: "Aditya Roy",
+      role: "Co-Leader of Yoga Wing",
+      image: AdityaRoy,
+    },
+    {
+      name: "Aryan Raj",
+      role: "Co-Leader of Yoga Wing",
+      image: AryanRaj,
     },
   ],
   "Seniors": [

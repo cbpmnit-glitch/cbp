@@ -10,7 +10,7 @@ const EducatorCard = ({ image, name, role, bgColor }) => {
         <img
           src={image}
           alt={name}
-          className="mb-9"
+          className="mb-9 rounded-2xl"
         />
       </div>
       <h3 className="font-semibold text-sm">{name}</h3>

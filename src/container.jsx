@@ -29,8 +29,7 @@ const Container = () => {
 
         {/* Description */}
         <p className="text-gray-700 text-lg">
-          is a community-driven health revolution to help you reach the
-          peak of your physical, mental, and spiritual well-being
+          is a comphrehensive soft skills development progran organized by TP cell in collaboration with department of humanities to develop industry demanding skills
         </p>
 
         {/* Explore Button */}
@@ -41,16 +40,16 @@ const Container = () => {
         {/* Stats Section */}
         <div className="flex flex-col sm:flex-row justify-center md:justify-start gap-4 mt-6">
           <div className="bg-white shadow-md px-6 py-4 rounded-xl text-center">
-            <h3 className="text-xl font-bold text-[#0674be]">1 Billion+</h3>
-            <p className="text-sm text-gray-600">Total Views</p>
+            <h3 className="text-xl font-bold text-[#0674be]">50,000+</h3>
+            <p className="text-sm text-gray-600">Impressions</p>
           </div>
           <div className="bg-white shadow-md px-6 py-4 rounded-xl text-center">
-            <h3 className="text-xl font-bold text-[#0674be]">8 Million+</h3>
-            <p className="text-sm text-gray-600">Total Followers</p>
+            <h3 className="text-xl font-bold text-[#0674be]">50+</h3>
+            <p className="text-sm text-gray-600">Total Speakers</p>
           </div>
           <div className="bg-white shadow-md px-6 py-4 rounded-xl text-center">
-            <h3 className="text-xl font-bold text-[#0674be]">500k+</h3>
-            <p className="text-sm text-gray-600">Workshop Graduates</p>
+            <h3 className="text-xl font-bold text-[#0674be]">2000+</h3>
+            <p className="text-sm text-gray-600">Workshop Attenders</p>
           </div>
         </div>
       </div>
