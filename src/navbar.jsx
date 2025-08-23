@@ -57,7 +57,13 @@ const Navbar = () => {
       navigate("/registration");
     } else if (sectionId === "Home") {
       navigate("/");
-    } else if (sectionId === "History") {
+    } else if (sectionId === "About Us") {
+      navigate("/About-us");
+    } 
+    if(sectionId === "Meet The Team"){
+      navigate("/MeetTheTeam");
+    } 
+     else if (sectionId === "History") {
       navigate("/History");
     } else if (sectionId === "Store") {
       navigate("/Store");

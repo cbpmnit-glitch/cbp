@@ -11,7 +11,6 @@ import StoriesSection from "./StoriesSection";
 import EducatorsSection from "./EducatorsSection";
 import EducatorCard from "./EducatorCard";
 import Footer from "./footer";
-import Timeline from "./Timeline";
 import ContactUs from "./ContactUs";
 import PrivatePolicy from "./PrivacyPolicy";
 import TandC from "./TandC";
@@ -23,6 +22,8 @@ import FormWithPayment from "./FormWithPayment";
 import PaymentSuccess from "./PaymentSuccess";
 import ESummitSpeakers from "./History_1";  // your history page
 import ProductPage from "./Store";
+import MeetTheTeam from "./MeetTheTeam";
+import AboutUS from "./AbousUS";
 import { Component } from "lucide-react";
 // Main landing page component
 const HomePage = () => {
@@ -30,7 +31,6 @@ const HomePage = () => {
     <>
       <Navbar />
       <Container />
-      <Timeline />
       <UpcomingWorkshops />
       <BookSection />
       <StoriesSection />
@@ -84,6 +84,9 @@ function App() {
 
         <Route path="/Store" element={<ProductPage />} />
 
+        <Route path="/About-us" element={<AboutUS />} />
+
+        <Route path="/MeetTheTeam" element={<MeetTheTeam />} />
       </Routes>
     </Router>
   );
