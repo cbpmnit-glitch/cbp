@@ -22,10 +22,8 @@ const WorkshopCard = ({ image, title, description, date, duration, language, pri
           <span>🌐 {language}</span>
         </div>
         <div className="flex items-center justify-between mt-4">
-          <button className="bg-green-600 text-white px-4 py-2 rounded-full hover:bg-green-700">
-            Register Now ₹{price}
-          </button>
-          <span className="text-sm text-red-500">{joined} have already joined</span>
+         
+          <span className="text-sm text-green-500">{joined} have already joined</span>
         </div>
       </div>
     </div>

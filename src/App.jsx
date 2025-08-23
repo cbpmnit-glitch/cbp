@@ -32,7 +32,6 @@ const HomePage = () => {
       <Navbar />
       <Container />
       <UpcomingWorkshops />
-      <BookSection />
       <StoriesSection />
       <EducatorsSection />
       <EducatorCard />
