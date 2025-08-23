@@ -114,12 +114,14 @@ const MeetTheTeam = () => {
         <p className="text-gray-500 mb-12 text-lg">
           The force behind the CBP program
         </p>
-
+          <div className="absolute -left-40 -top-40 h-500 w-40 rounded-full bg-[#3298dc] blur-3xl" />
+          <div className="absolute -right-40 top-40 h-500 w-40 rounded-full bg-[#5ab2ed] blur-3xl" />
+          <div className="absolute left-1/2 top-1/2 h-[28rem] w-[28rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-indigo-500/10 blur-3xl" />
         {/* Loop through year-wise groups */}
         {Object.keys(educatorsByYear).map((year, idx) => (
           <div
             key={idx}
-            className="mb-16 rounded-2xl shadow-lg bg-white p-8 hover:shadow-2xl transition-shadow duration-300"
+            className="mb-16 rounded-2xl shadow-lg bg-[#dde0dd] p-8 hover:shadow-2xl transition-shadow duration-300"
           >
             <h3 className="text-2xl mb-10 font-bold border-b-2 border-indigo-200 inline-block pb-2">
               {year}
