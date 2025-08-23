@@ -99,7 +99,7 @@ const App = () => {
     <p className="font-bold mb-2">Contact Details</p>
     <ul className="space-y-1">
       <li><Link to="/Private-Policy" onClick={() => window.scrollTo(0, 0)}>Privacy policy</Link></li>
-      <li><Link to="/Shipping-Policy" onClick={() => window.scrollTo(0, 0)}>Shipping Policy</Link></li>
+      <li><Link to="/T&C-Policy" onClick={() => window.scrollTo(0, 0)}>Terms and Conditions</Link></li>
       <li><Link to="/contact-us" onClick={() => window.scrollTo(0, 0)}>Contact Us</Link></li>
       <li><Link to="/Cancellation-Refund" onClick={() => window.scrollTo(0, 0)}>Cancellation & Refund</Link></li>
     </ul>
