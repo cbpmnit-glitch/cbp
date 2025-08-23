@@ -114,9 +114,7 @@ const MeetTheTeam = () => {
         <p className="text-gray-500 mb-12 text-lg">
           The force behind the CBP program
         </p>
-          <div className="absolute -left-40 -top-40 h-500 w-40 rounded-full bg-[#3298dc] blur-3xl" />
-          <div className="absolute -right-40 top-40 h-500 w-40 rounded-full bg-[#5ab2ed] blur-3xl" />
-          <div className="absolute left-1/2 top-1/2 h-[28rem] w-[28rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-indigo-500/10 blur-3xl" />
+
         {/* Loop through year-wise groups */}
         {Object.keys(educatorsByYear).map((year, idx) => (
           <div
