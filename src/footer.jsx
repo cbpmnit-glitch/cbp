@@ -47,7 +47,7 @@ const App = () => {
           >
             <h2 className="text-2xl font-semibold mb-4">
               CAPACITY BUILDING <br />
-              PROGRAMME
+              PROGRAM
             </h2>
             <hr className="border-white/40 w-[80px] mb-4" />
             <div className="flex gap-4 mt-2">
@@ -66,34 +66,46 @@ const App = () => {
           </motion.div>
 
           {/* Center Section */}
-          <motion.div
-            className="grid grid-cols-2 text-sm"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <div>
-              <p className="font-bold mb-2">Explore</p>
-              <ul className="space-y-1 ">
-                <li><a href="/"> Home</a></li>
-                <li><a href="./Store">Store</a></li>
-                <li><a href="./History">History</a></li>
-                <li><a href="./MeetTheTeam">Meet The Team</a></li>
-                <li><a href="./About-us">About Us</a></li>
-              </ul>
-            </div>
-            <div >
-              <p className="font-bold mb-2">Community</p>
-              <ul className="space-y-1">
-                <li><Link to="/T&C-Policy"  onClick={() => window.scrollTo(0, 0)}>Terms & Conditions</Link></li>
-                <li><Link to="/Private-Policy"  onClick={() => window.scrollTo(0, 0)}>Privacy policy</Link></li>
-                <li><Link to="/Shipping-Policy"  onClick={() => window.scrollTo(0, 0)}>Shipping Policy</Link></li>
-                <li><Link to="/contact-us"  onClick={() => window.scrollTo(0, 0)}>Contact Us</Link></li>
-                <li><Link to="/Cancellation-Refund"  onClick={() => window.scrollTo(0, 0)}>Cancellation & Refund</Link></li>
-              </ul>
-            </div>
+{/* Center Section */}
+{/* Center Section */}
+<motion.div
+  className="flex flex-col-3 md:flex-row justify-center gap-20 text-sm w-full"
+  initial={{ opacity: 0, y: 30 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6, delay: 0.2 }}
+>
+  <div>
+    <p className="font-bold mb-2">Explore</p>
+    <ul className="space-y-1">
+      <li><a href="/">Home</a></li>
+      <li><a href="./Store">Store</a></li>
+      <li><a href="./History">History</a></li>
+      <li><a href="./MeetTheTeam">Meet The Team</a></li>
+      <li><a href="./About-us">About Us</a></li>
+    </ul>
+  </div>
 
-          </motion.div>
+  <div>
+    <p className="font-bold mb-2">Community</p>
+    <ul className="space-y-1">
+      <li>E-Mail: cbpmnit@gmail.com</li>
+      <li>Phone: 9982308048</li>
+      <li>MNIT Jaipur</li>
+      <li>Stay Connected!</li>
+    </ul>
+  </div>
+
+  <div>
+    <p className="font-bold mb-2">Contact Details</p>
+    <ul className="space-y-1">
+      <li><Link to="/Private-Policy" onClick={() => window.scrollTo(0, 0)}>Privacy policy</Link></li>
+      <li><Link to="/Shipping-Policy" onClick={() => window.scrollTo(0, 0)}>Shipping Policy</Link></li>
+      <li><Link to="/contact-us" onClick={() => window.scrollTo(0, 0)}>Contact Us</Link></li>
+      <li><Link to="/Cancellation-Refund" onClick={() => window.scrollTo(0, 0)}>Cancellation & Refund</Link></li>
+    </ul>
+  </div>
+</motion.div>
+
         </div>
 
         {/* Divider */}

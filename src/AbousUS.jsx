@@ -6,15 +6,15 @@ const AboutUS = () => {
   return (
     <>
       <Navbar />
-      <div className="px-6 pt-30 py-12 max-w-5xl mx-auto pt-20">
+      <div className="px-6 pt-30 py-12 max-w-5xl mx-auto ">
         {/* Hero Section */}
         <div className="text-center mb-12">
           <h1 className="mt-2 text-center text-3xl font-black tracking-tight 
-               bg-gradient-to-b from-[#03386d] to-[#3879a4] 
+               bg-gradient-to-b  from-[#03386d] to-[#3879a4] 
                bg-clip-text text-transparent sm:text-4xl mb-2">
             About Us: Architecting the Leaders of Tomorrow
           </h1>
-          <p className="text-lg text-blue-600 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-700 max-w-3xl mx-auto">
             Welcome to the Capacity Building Program, a premier 5-day initiative
             crafted by the Training & Placement Cell of MNIT Jaipur.  
             More than a workshop — an immersive journey from academic knowledge to professional mastery.

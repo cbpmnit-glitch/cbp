@@ -4,7 +4,7 @@ import Footer from "./footer";
 import EducatorCard from "./EducatorCard";
 
 const educatorsByYear = {
-  "3rd Year Team": [
+  "2rd Year Team": [
     {
       name: "Radhika Gupta",
       role: "Co-Leader of Yoga Wing",
@@ -48,7 +48,7 @@ const educatorsByYear = {
       bgColor: "#c8a557",
     },
   ],
-  "2nd Year Team": [
+  "Seniors": [
     {
       name: "Rajat Jadon",
       role: "Host of 5AM Challenge\nCo-Leader of the Youth Wing",
