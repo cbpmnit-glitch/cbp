@@ -13,7 +13,7 @@ const workshopData = [
       "Learn to balance personal and professional life, develop discipline, and master self-control for long-term success.",
     date: "05/09/2025",
     duration: "6-8 pm",
-    speaker: "Ankit Sharma",
+    speaker: "Shri Munish Nandani",
     isSignature: true,
   },
   {
@@ -23,7 +23,7 @@ const workshopData = [
       "Understand how effective communication builds trust, strengthens relationships, and enhances leadership skills in every field of life.",
     date: "06/09/2025",
     duration: "6-8 pm",
-    speaker: "Megha Verma",
+    speaker: "Mr. Mahesh Punjabi ",
     isSignature: true,
   },
   {
@@ -33,7 +33,7 @@ const workshopData = [
       "Discover the importance of persistence, hard work, and mindset in achieving professional and personal milestones.",
     date: "07/09/2025",
     duration: "6-8 pm",
-    speaker: "Rajeev Nair",
+    speaker: "adv. Anuj Saxsena ",
     isSignature: true,
   },
   {
@@ -43,7 +43,7 @@ const workshopData = [
       "Gain knowledge on how continuous learning empowers leadership, decision-making, and inspires others to follow your vision.",
     date: "08/09/2025",
     duration: "6-8 pm",
-    speaker: "Priya Desai",
+    speaker: "Dr. Anupama Soni",
     isSignature: true,
   },
   {
@@ -53,7 +53,7 @@ const workshopData = [
       "Explore inner potential, spirituality, and values to lead a purposeful, peaceful, and impactful life.",
     date: "09/09/2025",
     duration: "6-8 pm",
-    speaker: "Swami Anant",
+    speaker: "Hari Bhakti Das",
     isSignature: true,
   },
 ];
