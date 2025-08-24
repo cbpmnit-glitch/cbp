@@ -1,19 +1,20 @@
 import React, { useRef, useState } from 'react';
+import main_element from './images/mainElement.png'
 
 const Container = () => {
-  const videoRef = useRef(null);
-  const [isPlaying, setIsPlaying] = useState(true);
+  // const videoRef = useRef(null);
+  // const [isPlaying, setIsPlaying] = useState(true);
 
-  const togglePlay = () => {
-    const video = videoRef.current;
-    if (video.paused) {
-      video.play();
-      setIsPlaying(true);
-    } else {
-      video.pause();
-      setIsPlaying(false);
-    }
-  };
+  // const togglePlay = () => {
+  //   const video = videoRef.current;
+  //   if (video.paused) {
+  //     video.play();
+  //     setIsPlaying(true);
+  //   } else {
+  //     video.pause();
+  //     setIsPlaying(false);
+  //   }
+  // };
 
   return (
     <section id='Home' className="bg-[#d0e1ee]  pt-30  py-12 px-8 md:px-20 flex flex-col md:flex-row items-center justify-between min-h-[90vh] ">
@@ -61,8 +62,9 @@ const Container = () => {
       </div>
 
       {/* Right Section (Video) */}
-      <div className="mt-10 md:mt-0 md:mr-5 relative">
-        <video
+      <div className="mt-10 md:mt-0 md:mr-5 md:ml-5 relative">
+        <img src ={main_element}   className="rounded-3xl w-[320px] md:w-[700px] shadow-lg"></img>
+        {/* <video
           ref={videoRef}
           src="https://www.w3schools.com/html/mov_bbb.mp4" // Replace with your actual video URL
           autoPlay
@@ -75,7 +77,7 @@ const Container = () => {
           className="absolute bottom-4 right-4 bg-white border border-[#015b98] text-[#015b98] px-4 py-2 rounded-full shadow hover:bg-gray-100"
         >
           {isPlaying ? 'Pause' : 'Play'}
-        </button>
+        </button> */}
       </div>
     </section>
   );

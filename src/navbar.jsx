@@ -104,7 +104,7 @@ const Navbar = () => {
         ${showNavbar ? "translate-y-0" : "-translate-y-full"}`}
     >
       {/* Logo */}
-      <img src={logo} alt="Logo" className="h-20 w-20 md:ml-20" />
+      <img src={logo} alt="Logo" className="h-15 w-15 md:ml-20" />
 
       {/* Desktop Menu */}
       <div className="hidden md:flex items-center space-x-8">
