@@ -157,7 +157,7 @@ const handleSubmit = async (data, redirect = false) => {
             <option value="">Select</option>
             <option>Under Graduate (UG)</option>
             <option>Post Graduation (PG)</option>
-            <option>Research (Ph.D</option>
+            <option>Research (PhD)</option>
           </select>
         </div>
 
@@ -301,19 +301,13 @@ const handleSubmit = async (data, redirect = false) => {
             <label className="font-bold text-blue-900 block">
               Choose Boss Name
             </label>
-            <select
-              name="bossName"
-              value={bossName}
-              onChange={(e) => setBossName(e.target.value)}
-              required
-              className="w-full p-2 border border-blue-300 rounded-md focus:ring-2 focus:ring-blue-600"
-            >
-              <option value="">Select</option>
-              <option>Harsh Rawat</option>
-              <option>Nikhil Chouhan</option>
-              <option>Nikesh Sirvi</option>
-              <option>Aashana Meena</option>
-            </select>
+            <input
+            type="text"
+            name="bossName"
+            placeholder="Volunteer's Name whom you have given cash"
+            required
+            className="w-full p-2 border border-blue-300 rounded-md focus:ring-2 focus:ring-blue-600"
+          />
           </div>
         )}
 
