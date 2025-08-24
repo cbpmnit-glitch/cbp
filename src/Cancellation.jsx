@@ -110,6 +110,8 @@ For any questions regarding this policy, or to submit a cancellation or exchange
 <br/>
 Email: cbpmnit@gmail.com
 <br/>
+Name: Harsh Rawat 
+<br/>
 Phone: 9982308048
 <br/>
 Support Hours: Monday - Saturday, 9:00 AM to 9:00 PM (IST)

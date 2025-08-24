@@ -29,12 +29,18 @@ const Container = () => {
 
         {/* Description */}
         <p className="text-gray-700 text-lg">
-          is a comphrehensive soft skills development progran organized by TP cell in collaboration with department of humanities to develop industry demanding skills
+          is a comphrehensive soft skills development program organized by TP cell in collaboration with department of humanities to develop industry demanding skills
         </p>
 
         {/* Explore Button */}
         <button className="bg-[#015b98] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#033861]">
-          Explore Workshops
+          <a
+  href="./registration"
+  className="bg-[#015b98] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#033861]"
+>
+  Buy Tickets
+</a>
+
         </button>
 
         {/* Stats Section */}
