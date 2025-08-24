@@ -40,15 +40,15 @@ const Container = () => {
         {/* Stats Section */}
         <div className="flex flex-col sm:flex-row justify-center md:justify-start gap-4 mt-6">
           <div className="bg-white shadow-md px-6 py-4 rounded-xl text-center">
-            <h3 className="text-xl font-bold text-[#0674be]">50,000+</h3>
+            <h3 className="text-xl font-bold text-[#0674be]">1,00,000+</h3>
             <p className="text-sm text-gray-600">Impressions</p>
           </div>
           <div className="bg-white shadow-md px-6 py-4 rounded-xl text-center">
-            <h3 className="text-xl font-bold text-[#0674be]">50+</h3>
+            <h3 className="text-xl font-bold text-[#0674be]">20+</h3>
             <p className="text-sm text-gray-600">Total Speakers</p>
           </div>
           <div className="bg-white shadow-md px-6 py-4 rounded-xl text-center">
-            <h3 className="text-xl font-bold text-[#0674be]">2000+</h3>
+            <h3 className="text-xl font-bold text-[#0674be]">1500+</h3>
             <p className="text-sm text-gray-600">Workshop Attenders</p>
           </div>
         </div>

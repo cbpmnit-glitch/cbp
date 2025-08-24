@@ -69,12 +69,13 @@ const App = () => {
 {/* Center Section */}
 {/* Center Section */}
 <motion.div
-  className="flex flex-col-3 md:flex-row justify-center gap-30 text-sm w-full"
+  className="flex flex-col md:flex-row justify-between text-sm w-full gap-8"
   initial={{ opacity: 0, y: 30 }}
   whileInView={{ opacity: 1, y: 0 }}
   transition={{ duration: 0.6, delay: 0.2 }}
 >
-  <div>
+  {/* Explore */}
+  <div className="w-full md:w-1/3">
     <p className="font-bold mb-2">Explore</p>
     <ul className="space-y-1">
       <li><a href="/">Home</a></li>
@@ -84,7 +85,8 @@ const App = () => {
     </ul>
   </div>
 
-  <div>
+  {/* Community */}
+  <div className="w-full md:w-1/3">
     <p className="font-bold mb-2">Community</p>
     <ul className="space-y-1">
       <li>E-Mail: cbpmnit@gmail.com</li>
@@ -94,7 +96,8 @@ const App = () => {
     </ul>
   </div>
 
-  <div>
+  {/* Contact Details */}
+  <div className="w-full md:w-1/3">
     <p className="font-bold mb-2">Contact Details</p>
     <ul className="space-y-1">
       <li><Link to="/Private-Policy" onClick={() => window.scrollTo(0, 0)}>Privacy policy</Link></li>
@@ -104,6 +107,7 @@ const App = () => {
     </ul>
   </div>
 </motion.div>
+
 
         </div>
 

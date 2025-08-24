@@ -2,7 +2,7 @@ import React from "react";
 
 const EducatorCard = ({ image, name, role, bgColor }) => {
   return (
-    <div id="Meet the Team" className="flex flex-col items-center text-center w-[150px] mx-3">
+    <div id="Meet the Team" className="flex-col items-center text-center w-[150px] mx-3">
       <div
         className="w-[130px] h-[130px] rounded-[20px] flex justify-center items-center mb-3"
         style={{ backgroundColor: bgColor }}

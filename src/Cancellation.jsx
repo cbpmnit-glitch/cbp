@@ -98,7 +98,7 @@ The CAPACITY BUILDING PROGRAM is not liable for any travel, accommodation, or ot
 <br/><br/>
 <b>7. Refund Processing</b>
 <br/>
-All approved refunds will be processed within 7-10 business days from the date of the official cancellation approval. Refunds will be credited back to the original method of payment used during registration.
+Upon verification of your request, the refund will be processed and credited back to the original payment method within 6-7 working days. You will receive a confirmation notification once the refund is initiated.
 <br/><br/>
 <b>8. Policy Acknowledgment</b>
 <br/>
