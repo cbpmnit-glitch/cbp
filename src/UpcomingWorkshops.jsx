@@ -11,7 +11,7 @@ const workshopData = [
     language: "Hinglish",
     price: 990,
     joined: 1622,
-    isSignature: true,
+    isSignature: false,
   },
   {
     image: "https://example.com/image2.jpg",
