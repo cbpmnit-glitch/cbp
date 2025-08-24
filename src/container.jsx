@@ -30,7 +30,7 @@ const Container = () => {
 
         {/* Description */}
         <p className="text-gray-700 text-lg">
-          is a comphrehensive soft skills development program organized by TP cell in collaboration with department of Humanities and Social Sciences to develop industry demanding skills
+          is a comphrehensive Soft Skills Development Program organized by TP Cell in collaboration with the Department of Humanities and Social Sciences to develop industry demanding Skills
         </p>
 
         {/* Explore Button */}
@@ -56,7 +56,7 @@ const Container = () => {
           </div>
           <div className="bg-white shadow-md px-6 py-4 rounded-xl text-center">
             <h3 className="text-xl font-bold text-[#0674be]">1500+</h3>
-            <p className="text-sm text-gray-600">Workshop Attenders</p>
+            <p className="text-sm text-gray-600">Workshop Attendees</p>
           </div>
         </div>
       </div>
