@@ -298,13 +298,10 @@ const handleSubmit = async (data, redirect = false) => {
         {paymentMethod === "cash" && (
           <div className="mt-2">
             <p className="text-blue-900 font-bold">Pay ₹150</p>
-            <label className="font-bold text-blue-900 block">
-              Choose Boss Name
-            </label>
             <input
             type="text"
             name="bossName"
-            placeholder="Volunteer's Name whom you have given cash"
+            placeholder="Write Volunteer's Name whom you have given cash"
             required
             className="w-full p-2 border border-blue-300 rounded-md focus:ring-2 focus:ring-blue-600"
           />
