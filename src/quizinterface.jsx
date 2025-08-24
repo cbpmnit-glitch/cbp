@@ -2,66 +2,16 @@ import React, { useState, useEffect } from "react";
 
 export default function QuizApp() {
   const questions = [
-    {
-      question: "What is the capital of France?",
-      options: ["Berlin", "Madrid", "Paris", "Rome"],
-      answer: "Paris",
-    },
-    {
-      question: "Which planet is known as the Red Planet?",
-      options: ["Earth", "Mars", "Jupiter", "Venus"],
-      answer: "Mars",
-    },
-    {
-      question: "What is 7 + 15?",
-      options: ["14", "22", "16", "17"],
-      answer: "22", // fixed correct answer
-    },
-    {
-      question: "Who wrote 'To Kill a Mockingbird'?",
-      options: [
-        "J.K. Rowling",
-        "Harper Lee",
-        "Mark Twain",
-        "Ernest Hemingway",
-      ],
-      answer: "Harper Lee",
-    },
-    {
-      question: "What is the largest ocean on Earth?",
-      options: [
-        "Atlantic Ocean",
-        "Indian Ocean",
-        "Arctic Ocean",
-        "Pacific Ocean",
-      ],
-      answer: "Pacific Ocean",
-    },
-    {
-      question: "What is the chemical symbol for water?",
-      options: ["H2O", "O2", "CO2", "N2"],
-      answer: "H2O",
-    },
-    {
-      question: "What is the tallest mountain in the world?",
-      options: ["Mount Everest", "K2", "Kangchenjunga", "Lhotse"],
-      answer: "Mount Everest",
-    },
-    {
-      question: "What is the currency of Japan?",
-      options: ["Yen", "Euro", "Dollar", "Pound"],
-      answer: "Yen",
-    },
-    {
-      question: "What is the main ingredient in guacamole?",
-      options: ["Tomato", "Onion", "Avocado", "Lime"],
-      answer: "Avocado",
-    },
-    {
-      question: "How many continents are there?",
-      options: ["5", "6", "7", "8"],
-      answer: "7",
-    },
+    { question: "What is the capital of France?", options: ["Berlin", "Madrid", "Paris", "Rome"], answer: "Paris" },
+    { question: "Which planet is known as the Red Planet?", options: ["Earth", "Mars", "Jupiter", "Venus"], answer: "Mars" },
+    { question: "What is 7 + 15?", options: ["14", "22", "16", "17"], answer: "22" },
+    { question: "Who wrote 'To Kill a Mockingbird'?", options: ["J.K. Rowling", "Harper Lee", "Mark Twain", "Ernest Hemingway"], answer: "Harper Lee" },
+    { question: "What is the largest ocean on Earth?", options: ["Atlantic Ocean", "Indian Ocean", "Arctic Ocean", "Pacific Ocean"], answer: "Pacific Ocean" },
+    { question: "What is the chemical symbol for water?", options: ["H2O", "O2", "CO2", "N2"], answer: "H2O" },
+    { question: "What is the tallest mountain in the world?", options: ["Mount Everest", "K2", "Kangchenjunga", "Lhotse"], answer: "Mount Everest" },
+    { question: "What is the currency of Japan?", options: ["Yen", "Euro", "Dollar", "Pound"], answer: "Yen" },
+    { question: "What is the main ingredient in guacamole?", options: ["Tomato", "Onion", "Avocado", "Lime"], answer: "Avocado" },
+    { question: "How many continents are there?", options: ["5", "6", "7", "8"], answer: "7" },
   ];
 
   const [step, setStep] = useState("user"); // user | quiz | result
@@ -70,6 +20,7 @@ export default function QuizApp() {
   const [score, setScore] = useState(0);
   const [timeLeft, setTimeLeft] = useState(10);
   const [incorrectAnswers, setIncorrectAnswers] = useState([]);
+  const [allAnswers, setAllAnswers] = useState([]);
 
   // Timer logic
   useEffect(() => {
@@ -93,6 +44,10 @@ export default function QuizApp() {
 
   const handleAnswer = (selected) => {
     const q = questions[currentQuestionIndex];
+
+    // Save selected answer (or No Answer if skipped)
+    setAllAnswers((prev) => [...prev, selected || "No Answer"]);
+
     if (selected === q.answer) {
       setScore((s) => s + 1);
     } else {
@@ -101,7 +56,7 @@ export default function QuizApp() {
         {
           question: q.question,
           correctAnswer: q.answer,
-          yourAnswer: selected || "No answer",
+          yourAnswer: selected || "No Answer",
         },
       ]);
     }
@@ -111,7 +66,29 @@ export default function QuizApp() {
       setTimeLeft(10);
     } else {
       setStep("result");
+      sendToGoogleSheets(); // save to Sheets at the end
     }
+  };
+
+  const sendToGoogleSheets = async () => {
+    const payload = {
+      name: userData.name,
+      email: userData.email,
+      rollno: userData.rollno,
+      answers: allAnswers,
+      score: score,
+    };
+
+    fetch("https://script.google.com/macros/s/AKfycbzK_BO7Nmc-JmfDZmU3mIYuo7gffWBOha6mqcdXm8p7tLlhbA7_jv8xh15qGL6d/exec", {
+  method: "POST",
+  mode: "no-cors",   // important if you don’t set CORS headers
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify(payload),
+})
+  .then(() => console.log("Data sent"))
+  .catch((err) => console.error(err));
   };
 
   const restartQuiz = () => {
@@ -120,6 +97,7 @@ export default function QuizApp() {
     setScore(0);
     setTimeLeft(10);
     setIncorrectAnswers([]);
+    setAllAnswers([]);
   };
 
   return (
@@ -127,29 +105,23 @@ export default function QuizApp() {
       <div style={styles.container}>
         <header style={styles.header}>
           <div style={styles.logo}>
-            <img
-              src="logo.png"
-              alt="CBP Logo"
-              style={{ height: 50, width: 50 }}
-            />
+            <img src="logo.png" alt="CBP Logo" style={{ height: 50, width: 50 }} />
             <h1>
-              <span style={{ color: "#7e57c2" }}>CBP</span> QUIZ
+              <span style={{ color: "#001f4b" }}>CBP</span> QUIZ
             </h1>
           </div>
         </header>
 
         {step === "user" && (
           <section>
-            <h2>Enter Your Details</h2>
+            <h2 style={{ color: "#03386d" }}>Enter Your Details</h2>
             <form onSubmit={handleUserSubmit}>
               <label>Name:</label>
               <input
                 type="text"
                 required
                 value={userData.name}
-                onChange={(e) =>
-                  setUserData({ ...userData, name: e.target.value })
-                }
+                onChange={(e) => setUserData({ ...userData, name: e.target.value })}
                 style={styles.input}
               />
               <label>Email-ID:</label>
@@ -157,9 +129,7 @@ export default function QuizApp() {
                 type="email"
                 required
                 value={userData.email}
-                onChange={(e) =>
-                  setUserData({ ...userData, email: e.target.value })
-                }
+                onChange={(e) => setUserData({ ...userData, email: e.target.value })}
                 style={styles.input}
               />
               <label>Roll No:</label>
@@ -167,9 +137,7 @@ export default function QuizApp() {
                 type="text"
                 required
                 value={userData.rollno}
-                onChange={(e) =>
-                  setUserData({ ...userData, rollno: e.target.value })
-                }
+                onChange={(e) => setUserData({ ...userData, rollno: e.target.value })}
                 style={styles.input}
               />
               <button type="submit" style={styles.button}>
@@ -181,23 +149,20 @@ export default function QuizApp() {
 
         {step === "quiz" && (
           <section>
-            <h2>Quiz Time!</h2>
+            <h2 style={{ color: "#03386d" }}>Quiz Time!</h2>
             <div style={styles.timer}>Time Left: {timeLeft} seconds</div>
             <div style={styles.progressBar}>
               <div
                 style={{
                   ...styles.progressFill,
-                  width: `${
-                    (currentQuestionIndex / questions.length) * 100
-                  }%`,
+                  width: `${(currentQuestionIndex / questions.length) * 100}%`,
                 }}
               />
             </div>
 
             <div style={styles.questionCard}>
               <h3>
-                {currentQuestionIndex + 1}.{" "}
-                {questions[currentQuestionIndex].question}
+                {currentQuestionIndex + 1}. {questions[currentQuestionIndex].question}
               </h3>
               <div>
                 {questions[currentQuestionIndex].options.map((opt) => (
@@ -218,20 +183,12 @@ export default function QuizApp() {
 
         {step === "result" && (
           <section style={{ textAlign: "center" }}>
-            <h2>Quiz Results</h2>
+            <h2 style={{ color: "#015b98" }}>Quiz Results</h2>
             <div style={styles.resultBox}>
-              <p>
-                <b>Name:</b> {userData.name}
-              </p>
-              <p>
-                <b>Roll No:</b> {userData.rollno}
-              </p>
-              <p>
-                <b>Email-ID:</b> {userData.email}
-              </p>
-              <h3>
-                Your Score: {score} out of {questions.length}
-              </h3>
+              <p><b>Name:</b> {userData.name}</p>
+              <p><b>Roll No:</b> {userData.rollno}</p>
+              <p><b>Email-ID:</b> {userData.email}</p>
+              <h3>Your Score: {score} out of {questions.length}</h3>
             </div>
 
             {incorrectAnswers.length > 0 && (
@@ -239,9 +196,7 @@ export default function QuizApp() {
                 <h4>Review Incorrect Answers:</h4>
                 {incorrectAnswers.map((item, idx) => (
                   <div key={idx} style={styles.incorrectItem}>
-                    <p>
-                      <strong>Q:</strong> {item.question}
-                    </p>
+                    <p><strong>Q:</strong> {item.question}</p>
                     <p style={{ color: "#d32f2f" }}>
                       <strong>Your Answer:</strong> {item.yourAnswer}
                     </p>
@@ -263,11 +218,11 @@ export default function QuizApp() {
   );
 }
 
-// Inline styles (converted from your CSS)
+// Inline styles using your palette
 const styles = {
   body: {
     fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
-    background: "linear-gradient(135deg, #e0f7fa, #e1bee7)",
+    background: "linear-gradient(135deg, #b2cde1, #6497b1)",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
@@ -278,7 +233,7 @@ const styles = {
     background: "#fff",
     padding: "2rem",
     borderRadius: "15px",
-    boxShadow: "0 8px 24px rgba(0,0,0,0.1)",
+    boxShadow: "0 8px 24px rgba(0,0,0,0.15)",
     width: "90%",
     maxWidth: "650px",
   },
@@ -288,12 +243,12 @@ const styles = {
     width: "100%",
     padding: "0.75rem",
     marginBottom: "1rem",
-    border: "2px solid #b39ddb",
+    border: "2px solid #6497b1",
     borderRadius: "8px",
     outline: "none",
   },
   button: {
-    background: "#7e57c2",
+    background: "#001f4b",
     color: "#fff",
     padding: "0.75rem 1.5rem",
     border: "none",
@@ -316,7 +271,7 @@ const styles = {
     overflow: "hidden",
     marginBottom: "1.5rem",
   },
-  progressFill: { height: "100%", background: "#7e57c2" },
+  progressFill: { height: "100%", background: "#015b98" },
   questionCard: {
     background: "#f8faff",
     border: "1px solid #dbe4f0",
@@ -325,8 +280,8 @@ const styles = {
   },
   option: { display: "flex", alignItems: "center", marginBottom: "0.5rem" },
   resultBox: {
-    background: "#f0f9ff",
-    border: "1px solid #b3daff",
+    background: "#e8f4fa",
+    border: "1px solid #6497b1",
     padding: "1rem",
     borderRadius: "12px",
   },
@@ -341,7 +296,7 @@ const styles = {
   incorrectItem: { borderBottom: "1px dashed #e57373", marginBottom: "1rem" },
   restartBtn: {
     marginTop: "1rem",
-    background: "#28a745",
+    background: "#03386d",
     color: "#fff",
     padding: "0.75rem 1.5rem",
     border: "none",
