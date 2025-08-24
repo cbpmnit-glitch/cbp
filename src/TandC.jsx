@@ -39,6 +39,7 @@ Payment transactions are governed by the Payment and Settlement Systems Act, 200
 <b>8. Governing Law & Jurisdiction</b><br/>
 These Terms and Conditions shall be governed by and construed in accordance with the laws of India, including but not limited to the Indian Contract Act, 1872, the Information Technology Act, 2000, and other applicable statutes.
 <br/><br/>
+</p>
     </div>
     <Footer/>
     </>
