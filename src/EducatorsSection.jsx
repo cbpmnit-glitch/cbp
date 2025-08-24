@@ -53,7 +53,7 @@ const EducatorsSection = () => {
 
       <div className="mt-10">
         <button className="bg-[#a1735b] text-white px-8 py-2 rounded-full hover:bg-[#865b44] transition">
-          View Entire Team
+          <a href="./MeetTheTeam">View Entire Team</a>
         </button>
       </div>
     </section>

@@ -37,8 +37,10 @@ We shall not be liable for any direct or indirect loss or damage resulting from 
 Payment transactions are governed by the Payment and Settlement Systems Act, 2007 (India) and relevant guidelines issued by the Reserve Bank of India (RBI).
 <br/><br/>
 <b>8. Governing Law & Jurisdiction</b><br/>
-These Terms and Conditions shall be governed by and construed in accordance with the laws of India, including but not limited to the Indian Contract Act, 1872, the Information Technology Act, 2000, and other applicable statutes.
+These Terms and Conditions shall be governed by and construed in accordance with the laws of *India, including but not limited to the Indian Contract Act, 1872, the Information Technology Act, 2000, and other applicable statutes.
 <br/><br/>
+Any disputes arising from or related to the use of this website, purchase of products, or engagement with us shall fall under the exclusive jurisdiction of the competent courts in Jaipur, Rajasthan, India.
+</p>
     </div>
     <Footer/>
     </>

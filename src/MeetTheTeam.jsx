@@ -89,12 +89,12 @@ const educatorsByYear = {
       image: DeekshaSinghal,
     },
     {
-      name: "Bhavesh Yadav,",
+      name: "Bhavesh Yadav",
       role: "Co-Leader of Yoga Wing",
       image: BhaveshYadav,
     },
     {
-      name: "Bhavesh Narnoliya,",
+      name: "Bhavesh Narnoliya",
       role: "Co-Leader of Yoga Wing",
       image: BhaveshNarnoliya,
     },
