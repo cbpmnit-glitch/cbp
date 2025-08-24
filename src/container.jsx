@@ -29,7 +29,7 @@ const Container = () => {
 
         {/* Description */}
         <p className="text-gray-700 text-lg">
-          is a comphrehensive soft skills development program organized by TP cell in collaboration with department of humanities to develop industry demanding skills
+          is a comphrehensive soft skills development program organized by TP cell in collaboration with department of Humanities and Social Sciences to develop industry demanding skills
         </p>
 
         {/* Explore Button */}
