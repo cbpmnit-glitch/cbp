@@ -25,6 +25,8 @@ import ProductPage from "./Store";
 import MeetTheTeam from "./MeetTheTeam";
 import AboutUS from "./AbousUS";
 import { Component } from "lucide-react";
+import QuizApp from "./quizinterface";
+
 // Main landing page component
 const HomePage = () => {
   return (
@@ -86,6 +88,8 @@ function App() {
         <Route path="/About-us" element={<AboutUS />} />
 
         <Route path="/MeetTheTeam" element={<MeetTheTeam />} />
+
+        <Route path="/quiz" element={<QuizApp />} />
       </Routes>
     </Router>
   );
