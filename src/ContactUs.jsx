@@ -13,14 +13,17 @@ Welcome to the official support hub for the CAPACITY BUILDING PROGRAM. We are co
 
 Please use the contact details below for your specific inquiry. Providing the requested details will help us resolve your query efficiently.
 <br/><br/>
-<b>1. General & Program Inquiries</b>
+<b>General & Program Inquiries</b>
 <br/>
 For all general questions related to the program, including the event schedule, curriculum details, facilitator profiles, or session content, please reach out to our primary support desk.
 <br/>
-Email: cbpmnit@gmail.com
+Name: Harsh Rawat
 <br/>
 Phone: 9982308048
 <br/>
+Email: cbpmnit@gmail.com
+<br/>
+{/*
 Operating Hours: We are available every day from 9:00 AM to 9:00 PM (IST).
 <br/><br/>
 <b>2. Registration, Payment & Cancellations</b>
@@ -64,6 +67,7 @@ Email: cbpmnit@gmail.com
 Recommended Email Subject: Feedback & Suggestions
 <br/><br/>
 We look forward to connecting with you and welcoming you to the program!
+*/}
       </p>
     </div>
     <Footer />
