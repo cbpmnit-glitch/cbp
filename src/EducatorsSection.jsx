@@ -3,41 +3,31 @@ import EducatorCard from "./EducatorCard";
 
 const educators = [
   {
-    name: "Subah Saraf",
+    name: "MS dhoni",
     role: "Co-founder",
     image: "https://webnew.satvicmovement.org/images/meet-the-team/team/rajat.webp",
-    bgColor: "#d5ede8"
   },
   {
-    name: "Harshvardhan Saraf",
+    name: "MS dhoni",
     role: "Co-founder",
     image: "https://webnew.satvicmovement.org/images/meet-the-team/team/rajat.webp",
-    bgColor: "#b2d37e"
   },
   {
-    name: "Harshvardhan Saraf",
+    name: "MS dhoni",
     role: "Co-founder",
     image: "https://webnew.satvicmovement.org/images/meet-the-team/team/rajat.webp",
-    bgColor: "#b2d37e"
   },
   {
-    name: "Radhika Gupta",
-    role: "Co-Leader of Yoga Wing",
+    name: "MS dhoni",
+    role: "Co-founder",
     image: "https://webnew.satvicmovement.org/images/meet-the-team/team/rajat.webp",
-    bgColor: "#c6957e"
   },
   {
-    name: "Akshay Jain",
-    role: "Co-Leader of Yoga Wing",
+    name: "MS dhoni",
+    role: "Co-founder",
     image: "https://webnew.satvicmovement.org/images/meet-the-team/team/rajat.webp",
-    bgColor: "#c8a557"
   },
-  {
-    name: "Rajat Jadon",
-    role: "Host of 5AM Challenge\nCo-Leader of the Youth Wing",
-    image: "https://webnew.satvicmovement.org/images/meet-the-team/team/rajat.webp",
-    bgColor: "#a3dadb"
-  }
+
 ];
 
 const EducatorsSection = () => {
