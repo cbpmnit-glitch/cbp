@@ -2,6 +2,8 @@ import React from "react";
 import Navbar from "./navbar";
 import Footer from "./footer";
 import EducatorCard from "./EducatorCard";
+import HardikDhoot from "./images/Hardik.png";
+import ParvAgrawal from "./images/ParvAgrawal.png";
 import RakshitJain from "./images/RakshitJain.png";
 import AdityaRoy from "./images/AdityaRoy.png";
 import AryanRaj from "./images/AryanRaj.png";
@@ -26,12 +28,12 @@ const educatorsByYear = {
     {
       name: "Hardik Dhoot",
       role: "Technical secretary",
-      image: "",
+      image: HardikDhoot,
     },
     {
       name: "Parv Agarwal",
       role: "Designing secretary",
-      image: "",
+      image: ParvAgrawal,
     },
     {
       name: "Tushar Choudhary",
@@ -109,6 +111,8 @@ const educatorsByYear = {
       image: AryanRaj,
     },
   ],
+
+  {/*
   "Seniors": [
     {
       name: "Rajat Jadon",
@@ -159,6 +163,7 @@ const educatorsByYear = {
       bgColor: "#a3dadb",
     },
   ],
+*/}
 };
 
 const MeetTheTeam = () => {
