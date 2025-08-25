@@ -84,7 +84,6 @@ const Navbar = () => {
 
   const navItems = [
     { name: "Home" },
-    { name: "History" },
     { name: "Meet The Team", dropdown: ["Free eBooks", "Physical Books"] },
     { name: "About Us", dropdown: ["Kitchen Tools", "Natural Supplements"] },
   ];
