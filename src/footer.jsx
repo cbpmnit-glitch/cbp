@@ -79,7 +79,6 @@ const App = () => {
     <p className="font-bold mb-2">Explore</p>
     <ul className="space-y-1">
       <li><a href="/">Home</a></li>
-      <li><a href="./History">History</a></li>
       <li><a href="./MeetTheTeam">Meet The Team</a></li>
       <li><a href="./About-us">About Us</a></li>
     </ul>
@@ -91,7 +90,7 @@ const App = () => {
     <ul className="space-y-1">
       <li>E-Mail: cbpmnit@gmail.com</li>
       <li>Phone: 9982308048</li>
-      <li>MNIT Jaipur</li>
+      <li>MNIT</li>
       <li>Stay Connected!</li>
     </ul>
   </div>

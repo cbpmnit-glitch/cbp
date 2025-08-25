@@ -2,6 +2,8 @@ import React from "react";
 import Navbar from "./navbar";
 import Footer from "./footer";
 import EducatorCard from "./EducatorCard";
+import HardikDhoot from "./images/Hardik.png";
+import ParvAgrawal from "./images/ParvAgrawal.png";
 import RakshitJain from "./images/RakshitJain.png";
 import AdityaRoy from "./images/AdityaRoy.png";
 import AryanRaj from "./images/AryanRaj.png";
@@ -26,12 +28,12 @@ const educatorsByYear = {
     {
       name: "Hardik Dhoot",
       role: "Technical secretary",
-      image: "",
+      image: HardikDhoot,
     },
     {
       name: "Parv Agarwal",
       role: "Designing secretary",
-      image: "",
+      image: ParvAgrawal,
     },
     {
       name: "Tushar Choudhary",
@@ -89,12 +91,12 @@ const educatorsByYear = {
       image: DeekshaSinghal,
     },
     {
-      name: "Bhavesh Yadav,",
+      name: "Bhavesh Yadav",
       role: "Co-Leader of Yoga Wing",
       image: BhaveshYadav,
     },
     {
-      name: "Bhavesh Narnoliya,",
+      name: "Bhavesh Narnoliya",
       role: "Co-Leader of Yoga Wing",
       image: BhaveshNarnoliya,
     },
@@ -107,56 +109,6 @@ const educatorsByYear = {
       name: "Aryan Raj",
       role: "Co-Leader of Yoga Wing",
       image: AryanRaj,
-    },
-  ],
-  "Seniors": [
-    {
-      name: "Rajat Jadon",
-      role: "Host of 5AM Challenge\nCo-Leader of the Youth Wing",
-      image: "https://webnew.satvicmovement.org/images/meet-the-team/team/rajat.webp",
-      bgColor: "#a3dadb",
-    },
-    {
-      name: "Rajat Jadon",
-      role: "Host of 5AM Challenge\nCo-Leader of the Youth Wing",
-      image: "https://webnew.satvicmovement.org/images/meet-the-team/team/rajat.webp",
-      bgColor: "#a3dadb",
-    },
-    {
-      name: "Rajat Jadon",
-      role: "Host of 5AM Challenge\nCo-Leader of the Youth Wing",
-      image: "https://webnew.satvicmovement.org/images/meet-the-team/team/rajat.webp",
-      bgColor: "#a3dadb",
-    },
-    {
-      name: "Rajat Jadon",
-      role: "Host of 5AM Challenge\nCo-Leader of the Youth Wing",
-      image: "https://webnew.satvicmovement.org/images/meet-the-team/team/rajat.webp",
-      bgColor: "#a3dadb",
-    },
-    {
-      name: "Rajat Jadon",
-      role: "Host of 5AM Challenge\nCo-Leader of the Youth Wing",
-      image: "https://webnew.satvicmovement.org/images/meet-the-team/team/rajat.webp",
-      bgColor: "#a3dadb",
-    },
-    {
-      name: "Rajat Jadon",
-      role: "Host of 5AM Challenge\nCo-Leader of the Youth Wing",
-      image: "https://webnew.satvicmovement.org/images/meet-the-team/team/rajat.webp",
-      bgColor: "#a3dadb",
-    },
-    {
-      name: "Rajat Jadon",
-      role: "Host of 5AM Challenge\nCo-Leader of the Youth Wing",
-      image: "https://webnew.satvicmovement.org/images/meet-the-team/team/rajat.webp",
-      bgColor: "#a3dadb",
-    },
-    {
-      name: "Rajat Jadon",
-      role: "Host of 5AM Challenge\nCo-Leader of the Youth Wing",
-      image: "https://webnew.satvicmovement.org/images/meet-the-team/team/rajat.webp",
-      bgColor: "#a3dadb",
     },
   ],
 };

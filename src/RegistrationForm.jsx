@@ -96,7 +96,7 @@ const handleSubmit = async (data, redirect = false) => {
   return (
     <div className="max-w-2xl mx-auto mt-10 bg-white p-8 rounded-xl shadow-lg border-t-8 border-blue-600">
       <h2 className="text-center text-blue-600 text-2xl font-bold mb-6">
-        Registration Form
+        Registration Form for CBP 6.0
       </h2>
 
       <form
@@ -157,6 +157,7 @@ const handleSubmit = async (data, redirect = false) => {
             <option value="">Select</option>
             <option>Under Graduate (UG)</option>
             <option>Post Graduation (PG)</option>
+            <option>Research (PhD)</option>
           </select>
         </div>
 
@@ -168,15 +169,25 @@ const handleSubmit = async (data, redirect = false) => {
             className="w-full p-2 border border-blue-300 rounded-md focus:ring-2 focus:ring-blue-600"
           >
             <option value="">Select</option>
-            <option>Mechanical</option>
-            <option>Chemical</option>
-            <option>Metallurgy</option>
-            <option>AIDE</option>
-            <option>Architecture</option>
-            <option>CSE</option>
-            <option>ECE</option>
-            <option>Civil</option>
-            <option>EE</option>
+            <option>Architecture and Planning</option>
+            <option>Artificial Intelligence & Data Engineering</option>
+            <option>Chemical Engineering</option>
+            <option>Chemistry</option>
+            <option>Civil Engineering</option>
+            <option>Computer Science and Engineering</option>
+            <option>Electrical Engineering</option>
+            <option>Electronics & Communication Engineering</option>
+            <option>Humanities and Social Sciences</option>
+            <option>Management Studies</option>
+            <option>Mathematics</option>
+            <option>Mechanical Engineering</option>
+            <option>Metallurgical and Materials Engineering</option>
+            <option>Physics</option>
+            <option>Centre for Energy & Environment</option>
+            <option>Materials Research Centre</option>
+            <option>National Centre for Disaster Mitigation & Management</option>
+            <option>Centre for Rural Development</option>
+            <option>Centre for Cyber Security</option>
           </select>
         </div>
 
@@ -276,7 +287,7 @@ const handleSubmit = async (data, redirect = false) => {
 
         {paymentMethod === "online" && (
           <div className="mt-2">
-            <p className="text-blue-900 font-bold">Pay ₹1 Online</p>
+            <p className="text-blue-900 font-bold">Pay ₹150 Online</p>
             <button type="button" onClick={handlePayNow} className="bg-blue-600 text-white px-4 py-2 rounded-md font-bold hover:bg-blue-900">
               Pay Online
             </button>
@@ -287,22 +298,13 @@ const handleSubmit = async (data, redirect = false) => {
         {paymentMethod === "cash" && (
           <div className="mt-2">
             <p className="text-blue-900 font-bold">Pay ₹150</p>
-            <label className="font-bold text-blue-900 block">
-              Choose Boss Name
-            </label>
-            <select
-              name="bossName"
-              value={bossName}
-              onChange={(e) => setBossName(e.target.value)}
-              required
-              className="w-full p-2 border border-blue-300 rounded-md focus:ring-2 focus:ring-blue-600"
-            >
-              <option value="">Select</option>
-              <option>Harsh Rawat</option>
-              <option>Nikhil Chouhan</option>
-              <option>Nikesh Sirvi</option>
-              <option>Aashana Meena</option>
-            </select>
+            <input
+            type="text"
+            name="bossName"
+            placeholder="Write Volunteer's Name whom you have given cash"
+            required
+            className="w-full p-2 border border-blue-300 rounded-md focus:ring-2 focus:ring-blue-600"
+          />
           </div>
         )}
 

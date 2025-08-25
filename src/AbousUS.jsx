@@ -16,7 +16,7 @@ const AboutUS = () => {
           </h1>
           <p className="text-lg text-gray-700 max-w-3xl mx-auto">
             Welcome to the Capacity Building Program, a premier 5-day initiative
-            crafted by the Training & Placement Cell of MNIT Jaipur.  
+            crafted by the Training & Placement Cell of MNIT.  
             More than a workshop — an immersive journey from academic knowledge to professional mastery.
           </p>
         </div>
@@ -117,11 +117,11 @@ const AboutUS = () => {
         {/* Section 4 */}
         <div className="mb-10">
           <h2 className="text-2xl font-semibold text-blue-700 mb-3">
-            Our Foundation: The Training & Placement Cell, MNIT Jaipur
+            Our Foundation: The Training & Placement Cell, MNIT
           </h2>
           <p className="text-gray-700 mb-3">
             The T&P Cell is the central nervous system for career development at
-            MNIT Jaipur, with a legacy of:
+            MNIT, with a legacy of:
           </p>
           <ul className="list-disc ml-6 text-gray-800 space-y-1">
             <li>Forging strategic partnerships with industry.</li>
