@@ -25,8 +25,6 @@ Identity & Contact Data: Your full name, email address, mobile phone number, and
 
 Transactional Data: Information related to your payment, such as transaction IDs and billing details. Please note, we do not store full credit/debit card numbers; this information is processed directly by our secure third-party payment gateways.
 
-Logistical Data: Physical address for the delivery of merchandise (e.g., T-shirts) and any dietary preferences or special accommodation requests if applicable.
-
 Engagement Data: Any feedback, opinions, or responses you voluntarily provide through surveys, feedback forms, or direct communication with our team.
 <br/>
 <b>2.2. Information We Collect Automatically:</b><br/>
@@ -70,8 +68,6 @@ Despite these measures, no method of transmission over the Internet or method of
 We do not sell, rent, or trade your personal information to third parties for their marketing purposes. We may share your data with the following categories of trusted third-party service providers who assist us in delivering the Program:
 
 Payment Processors: To securely process your registration fees.
-
-Logistics & Courier Services: To deliver physical merchandise like T-shirts.
 
 Cloud & IT Service Providers: For data storage, web hosting, and analytics.
 
