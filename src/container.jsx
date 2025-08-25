@@ -39,7 +39,7 @@ const Container = () => {
   href="./registration"
   className="bg-[#015b98] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#033861]"
 >
-  Buy Tickets
+  Buy Tickets - ₹150
 </a>
 
         </button>
