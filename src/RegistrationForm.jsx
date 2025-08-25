@@ -287,7 +287,7 @@ const handleSubmit = async (data, redirect = false) => {
 
         {paymentMethod === "online" && (
           <div className="mt-2">
-            <p className="text-blue-900 font-bold">Pay ₹1 Online</p>
+            <p className="text-blue-900 font-bold">Pay ₹150 Online</p>
             <button type="button" onClick={handlePayNow} className="bg-blue-600 text-white px-4 py-2 rounded-md font-bold hover:bg-blue-900">
               Pay Online
             </button>
