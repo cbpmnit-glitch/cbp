@@ -91,7 +91,7 @@ const App = () => {
     <ul className="space-y-1">
       <li>E-Mail: cbpmnit@gmail.com</li>
       <li>Phone: 9982308048</li>
-      <li>MNIT Jaipur</li>
+      <li>MNIT</li>
       <li>Stay Connected!</li>
     </ul>
   </div>
