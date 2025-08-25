@@ -9,10 +9,11 @@ const Cancellation = () => {
       <div className="p-6 max-w-4xl mx-auto pt-30">
         <h1 className="text-2xl font-bold mb-4">Refund Policy</h1>
         <p className="mb-4">
-<b>1. Our Commitment</b>
+<b>Our Commitment</b>
 <br/>
 At the CAPACITY BUILDING PROGRAM, we are dedicated to providing a transformative learning experience through our comprehensive 5-day soft skill development program. Our commitment involves significant upfront investment in securing expert facilitators, procuring high-quality materials, and arranging logistics to ensure a seamless and valuable experience for all participants. This policy is designed to be fair to our participants while accounting for the resources we commit to upon registration.
 <br/><br/>
+{/*
 <b>2. Participant-Initiated Cancellation</b>
 <br/>
 We understand that circumstances can change. Should you need to cancel your registration, please adhere to the following procedure and timelines.
@@ -104,9 +105,14 @@ Upon verification of your request, the refund will be processed and credited bac
 <br/>
 By completing the registration and making a payment, you acknowledge that you have read, understood, and agree to be bound by the terms and conditions outlined in this Cancellation and Refund Policy.
 <br/><br/>
-<b>9. Contact & Support</b>
+*/}
+<b>Non-Refundable</b>
 <br/>
-For any questions regarding this policy, or to submit a cancellation or exchange request, please contact our support team.
+We won't accept any refunds.
+<br/><br/>
+<b>Contact & Support</b>
+<br/>
+For any questions regarding this policy, please contact our support team.
 <br/>
 Email: cbpmnit@gmail.com
 <br/>
