@@ -26,7 +26,7 @@ const WorkshopCard = ({
 
         {isSignature && (
           <span className="inline-block bg-orange-100 text-yellow-900 px-2 py-1 text-xs rounded-full mb-2">
-            🌟 Signature Workshop - ₹150
+            🌟 Signature Workshop - ₹150 - One Day Workshop
           </span>
         )}
 
