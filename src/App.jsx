@@ -80,7 +80,7 @@ function App() {
 
         <Route path="/quiz" element={<QuizApp />} />
 
-        <Route path="/failure" element={<PaymentFailure />} />
+        <Route path="/psyment-failed" element={<PaymentFailure />} />
       </Routes>
     </Router>
   );

@@ -30,14 +30,30 @@ export default function RegistrationForm() {
 const API_BASE_URL = import.meta.env.VITE_API_URL;
 const createOrder = async () => {
   try {
-    // same-origin call to your Vercel Serverless Function (HTTPS, no CORS)
+    // Collect form data from the form element
+    const formElement = document.querySelector("form");
+    const formData = new FormData(formElement);
+    const data = Object.fromEntries(formData.entries());
+
+    // Step 1: Ask backend to create PhonePe order
     const response = await axios.post("/api/create-order", { amount: 150 });
-    window.location.href = response.data.checkoutPageUrl;
+    const { merchantOrderId, checkoutPageUrl } = response.data;
+
+    // Step 2: Save PENDING entry in Sheets via backend
+    await axios.post("/api/save-pending", {
+      merchantOrderId,
+      formData: data,
+      paymentStatus: "PENDING",
+    });
+
+    // Step 3: Redirect user to PhonePe checkout
+    window.location.href = checkoutPageUrl;
   } catch (error) {
     console.error("Error creating order:", error);
     alert("❌ Failed to start payment. Please try again.");
   }
 };
+
 
 
 
@@ -86,7 +102,7 @@ const createOrder = async () => {
 const handleSubmit = async (data, redirect = false) => {
  
   try {
-    await fetch("https://script.google.com/macros/s/AKfycbw3FFtV2L_rbSMnxbJrCKqy4lM7pj1vZMUgWftO0n2hhUi92seKpBjj0hxY_0MreHwj/exec", 
+    await fetch("https://script.google.com/a/macros/mnit.ac.in/s/AKfycbzTJNZy6xtxIi4YxUID5-sSRIKWCpNVuaQSAev_3g6vyEsHf2oR7Ot1GERJnurwv4FQ/exec", 
       {
       method: "POST",
       mode: "no-cors",  // 👈 important for Google Apps Script
@@ -115,13 +131,19 @@ const handleSubmit = async (data, redirect = false) => {
       </h2>
 
       <form
-    onSubmit={(e) => {
+  onSubmit={(e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
     const data = Object.fromEntries(formData.entries());
-    handleSubmit(data, paymentMethod === "cash");
-  }} className="space-y-4"
+
+    if (paymentMethod === "cash") {
+      // Directly save cash as PAID
+      handleSubmit({ ...data, paymentStatus: "PAID" }, true);
+    }
+  }}
+  className="space-y-4"
 >
+
         <div>
           <label className="font-bold text-blue-900 block">Full Name</label>
           <input

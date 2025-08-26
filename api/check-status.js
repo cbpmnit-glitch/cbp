@@ -1,8 +1,7 @@
 // /api/check-status.js
-import {
-  StandardCheckoutClient,
-  Env,
-} from "pg-sdk-node";
+import { StandardCheckoutClient, Env } from "pg-sdk-node";
+// ⬇️ ADD THIS
+import axios from "axios";  
 
 const client = StandardCheckoutClient.getInstance(
   process.env.CLIENT_ID,
@@ -18,11 +17,33 @@ export default async function handler(req, res) {
 
     const statusRes = await client.getOrderStatus(merchantOrderId);
 
-    // PhonePe SDK returns an order state; redirect accordingly
+    // PhonePe SDK returns an order state; update Google Sheet + redirect accordingly
     if (statusRes.state === "COMPLETED") {
-      return res.redirect(302, "/payment-success");
+      // ⬇️ NEW: update Google Sheet as PAID
+      try {
+        await axios.post(process.env.SHEET_WEBAPP_URL, {
+          merchantOrderId,
+          paymentStatus: "PAID",
+        });
+      } catch (err) {
+        console.error("❌ Failed to update Google Sheet:", err.message);
+      }
+
+      return res.redirect(302, `/payment-success?merchantOrderId=${merchantOrderId}`);
     }
-    return res.redirect(302, "/failure");
+
+    // ⬇️ NEW: update Google Sheet as FAILED
+    try {
+      await axios.post(process.env.SHEET_WEBAPP_URL, {
+        merchantOrderId,
+        paymentStatus: "FAILED",
+      });
+    } catch (err) {
+      console.error("❌ Failed to update Google Sheet (failed status):", err.message);
+    }
+
+    return res.redirect(302, `/payment-failed?merchantOrderId=${merchantOrderId}`);
+
   } catch (err) {
     console.error("Error checking status:", err);
     return res.status(500).send("Error checking status");
