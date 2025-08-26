@@ -30,7 +30,7 @@ const Container = () => {
 
         {/* Description */}
         <p className="text-gray-700 text-lg">
-          is a comphrehensive 5 days Soft Skills Development Program organized by TP Cell in collaboration with the Department of Humanities and Social Sciences to develop industry demanding Skills
+          is a comphrehensive 5 days Soft Skills Development Program organized by Department of Humanities and Social Sciences in collaboration with the Training and Placement Cell MNIT Jaipur to develop industry demanding Skills
         </p>
 
         {/* Explore Button */}
