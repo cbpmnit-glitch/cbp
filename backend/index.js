@@ -20,7 +20,7 @@ const env = Env.PRODUCTION // change to Env.SANDBOX wHEN TESTING
 const client = StandardCheckoutClient.getInstance(clientId, clientSecret, clientVersion, env)
 
 // 👇 NEW: use BASE_URL from .env
-const baseUrl = process.env.BASE_URL || "http://localhost:5000";
+const baseUrl = process.env.BASE_URL || "http://cbpmnit.in";
 
 app.post('/create-order', async (req, res) => {
     try {
