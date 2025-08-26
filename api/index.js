@@ -1,8 +1,9 @@
 import express from "express";
 import cors from "cors";
-import {randomUUID} from "crypto"
+import { randomUUID } from "crypto"
 import dotenv from "dotenv"
 import { StandardCheckoutClient, Env, StandardCheckoutPayRequest } from "pg-sdk-node";
+import axios from "axios";
 
 
 dotenv.config();
@@ -24,9 +25,10 @@ const baseUrl = process.env.BASE_URL || "http://cbpmnit.in";
 
 app.post('/create-order', async (req, res) => {
     try {
-        const {amount} = req.body
+        console.log("Creating order...");
+        const { amount } = req.body
 
-        if(!amount){
+        if (!amount) {
             return res.status(400).send("Amount is Required")
         }
 
@@ -37,45 +39,77 @@ app.post('/create-order', async (req, res) => {
 
 
         const request = StandardCheckoutPayRequest.builder()
-        .merchantOrderId(merchantOrderId)
-        .amount(amount)
-        .redirectUrl(redirectUrl)
-        .build()
+            .merchantOrderId(merchantOrderId)
+            .amount(amount)
+            .redirectUrl(redirectUrl)
+            .build()
 
         const response = await client.pay(request)
         return res.json({
+            merchantOrderId: merchantOrderId,
             checkoutPageUrl: response.redirectUrl
         })
 
-    } catch (error){
+    } catch (error) {
         console.error("error-creating order" + error)
         res.status(500).send("Error creating order")
     }
-    })
+})
 
-    app.get('/check-status', async (req, res) => {
-        try {
-            const {merchantOrderId} = req.query
+app.post('/save-pending', async (req, res) => {
+    try {
+        const { merchantOrderId, formData, paymentStatus } = req.body;
 
-            if(!merchantOrderId){
-                return res.status(400).send("Merchant Order Id is required")
-            }
-
-            const response = await client.getOrderStatus(merchantOrderId)
-
-            const status = response.state
-            if(status === "COMPLETED"){
-                return res.redirect(`${baseUrl}/payment-success`);
-            } else{
-                return res.redirect(`${baseUrl}/failure`);
-            }
-
-        } catch (error){
-            console.error("error-checking status" + error)
-            res.status(5000).send("Error checking status")
+        if (!merchantOrderId || !formData) {
+            return res.status(400).json({ error: "merchantOrderId and formData required" });
         }
-    })
 
-    app.listen(5000, ()=>{
-        console.log("Server is running on port 5000")
-    })
+        // Attach merchantOrderId + status to the form data
+        const rowData = {
+            ...formData,
+            merchantOrderId,
+            paymentStatus: paymentStatus || "PENDING",
+        };
+
+        // Send data to your Google Apps Script Web App
+        await axios.post(
+            process.env.SHEET_WEBAPP_URL, // <-- Store your GAS URL in Vercel env
+            rowData,
+            {
+                headers: { "Content-Type": "application/json" },
+            }
+        );
+
+        return res.status(200).json({ success: true });
+    } catch (error) {
+        console.error("Error saving pending entry:", error.message);
+        return res.status(500).json({ error: "Failed to save pending entry" });
+    }
+})
+
+app.get('/check-status', async (req, res) => {
+    try {
+        const { merchantOrderId } = req.query
+
+        if (!merchantOrderId) {
+            return res.status(400).send("Merchant Order Id is required")
+        }
+
+        const response = await client.getOrderStatus(merchantOrderId)
+
+        const status = response.state
+        if (status === "COMPLETED") {
+            return res.redirect(`${baseUrl}/payment-success`);
+        } else {
+            return res.redirect(`${baseUrl}/failure`);
+        }
+
+    } catch (error) {
+        console.error("error-checking status" + error)
+        res.status(5000).send("Error checking status")
+    }
+})
+
+app.listen(5000, () => {
+    console.log("Server is running on port 5000")
+})

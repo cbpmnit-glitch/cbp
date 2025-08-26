@@ -35,12 +35,16 @@ const createOrder = async () => {
     const formData = new FormData(formElement);
     const data = Object.fromEntries(formData.entries());
 
+    console.log("receivedd");
+
     // Step 1: Ask backend to create PhonePe order
-    const response = await axios.post("/api/create-order", { amount: 150 });
+    // const response = await axios.post("http://localhost:5000/create-order", { amount: 150 });
+    const response = await axios.post("/create-order", { amount: 150 });
     const { merchantOrderId, checkoutPageUrl } = response.data;
 
     // Step 2: Save PENDING entry in Sheets via backend
-    await axios.post("/api/save-pending", {
+    // await axios.post("http://localhost:5000/save-pending", {
+    await axios.post("/save-pending", {
       merchantOrderId,
       formData: data,
       paymentStatus: "PENDING",
