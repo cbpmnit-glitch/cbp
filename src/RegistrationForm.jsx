@@ -100,28 +100,24 @@ const createOrder = async () => {
   };
 
 const handleSubmit = async (data, redirect = false) => {
- 
   try {
-    await fetch("https://script.google.com/a/macros/mnit.ac.in/s/AKfycbzTJNZy6xtxIi4YxUID5-sSRIKWCpNVuaQSAev_3g6vyEsHf2oR7Ot1GERJnurwv4FQ/exec", 
-      {
-      method: "POST",
-      mode: "no-cors",  // 👈 important for Google Apps Script
-      body: JSON.stringify(data),
-      headers: { "Content-Type": "application/json" },
+    await axios.post("/api/save-pending", {
+      merchantOrderId: `cash-${Date.now()}`,   // unique ID for cash
+      formData: data,
+      paymentStatus: "PAID",
     });
 
-   // Since no-cors doesn’t give a real response, just assume success
-  alert("✅ Form submitted successfully!");
+    alert("✅ Form submitted successfully!");
 
-   if (redirect) {
-      window.location.href = "/payment-success"; // Redirect if asked
+    if (redirect) {
+      window.location.href = "/payment-success"; 
     }
-
   } catch (error) {
     console.error("Error submitting form:", error);
     alert("❌ Something went wrong while submitting the form.");
   }
 };
+
 
 
   return (
