@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useState, useEffect } from "react";
 
 export default function RegistrationForm() {
@@ -26,38 +27,54 @@ export default function RegistrationForm() {
   // When Pay Online clicked → enable submit
   // When Pay Online clicked → enable submit
 // When Pay Online clicked → enable submit
-const handlePayNow = () => {
-  const options = {
-    key: "rzp_live_R7WlLJ9Id7QZXL", // ✅ Your Razorpay key
-    amount: 15000, // ₹1 = 100 paise
-    currency: "INR",
-    name: "CBP 6.0",
-    description: "Registration Payment",
-    handler: function (response) {
-      alert("✅ Payment successful! Submitting your form...");
+const API_BASE_URL = import.meta.env.VITE_API_URL;
 
-      // Collect form data
-      const formElement = document.querySelector("form");
-      const formData = new FormData(formElement);
-      const data = Object.fromEntries(formData.entries());
+const createOrder = async () => {
+  try {
+    const response = await axios.post(`${API_BASE_URL}/create-order`, {
+      amount: 100, // ₹100 (in rupees)
+    });
 
-      // Add Razorpay payment ID
-      data.razorpay_payment_id = response.razorpay_payment_id;
-
-      // Call React's handleSubmit directly
-      handleSubmit(data, true); // true = redirect after submit
-    },
-    modal: {
-      ondismiss: function () {
-        alert("❌ Payment was not completed. Please try again.");
-      },
-    },
-    theme: { color: "#3399cc" },
-  };
-
-  const rzp1 = new window.Razorpay(options);
-  rzp1.open();
+    // Redirect to checkout page URL returned from backend
+    window.location.href = response.data.checkoutPageUrl;
+  } catch (error) {
+    console.error("Error creating order:", error);
+    alert("❌ Failed to start payment. Please try again.");
+  }
 };
+
+// const handlePayNow = () => {
+//   const options = {
+//     key: "rzp_live_R7WlLJ9Id7QZXL", // ✅ Your Razorpay key
+//     amount: 15000, // ₹1 = 100 paise
+//     currency: "INR",
+//     name: "CBP 6.0",
+//     description: "Registration Payment",
+//     handler: function (response) {
+//       alert("✅ Payment successful! Submitting your form...");
+
+//       // Collect form data
+//       const formElement = document.querySelector("form");
+//       const formData = new FormData(formElement);
+//       const data = Object.fromEntries(formData.entries());
+
+//       // Add Razorpay payment ID
+//       data.razorpay_payment_id = response.razorpay_payment_id;
+
+//       // Call React's handleSubmit directly
+//       handleSubmit(data, true); // true = redirect after submit
+//     },
+//     modal: {
+//       ondismiss: function () {
+//         alert("❌ Payment was not completed. Please try again.");
+//       },
+//     },
+//     theme: { color: "#3399cc" },
+//   };
+
+//   const rzp1 = new window.Razorpay(options);
+//   rzp1.open();
+// };
 
 
 
@@ -286,14 +303,17 @@ const handleSubmit = async (data, redirect = false) => {
         </div>
 
         {paymentMethod === "online" && (
-          <div className="mt-2">
-            <p className="text-blue-900 font-bold">Pay ₹150 Online</p>
-            <button type="button" onClick={handlePayNow} className="bg-blue-600 text-white px-4 py-2 rounded-md font-bold hover:bg-blue-900">
-              Pay Online
-            </button>
-
-          </div>
-        )}
+  <div className="mt-2">
+    <p className="text-blue-900 font-bold">Pay ₹150 Online</p>
+    <button
+      type="button"
+      onClick={createOrder}
+      className="bg-blue-600 text-white px-4 py-2 rounded-md font-bold hover:bg-blue-900"
+    >
+      Pay Online
+    </button>
+  </div>
+)}
 
         {paymentMethod === "cash" && (
           <div className="mt-2">
