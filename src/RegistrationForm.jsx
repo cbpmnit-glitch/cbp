@@ -28,20 +28,18 @@ export default function RegistrationForm() {
   // When Pay Online clicked → enable submit
 // When Pay Online clicked → enable submit
 const API_BASE_URL = import.meta.env.VITE_API_URL;
-
 const createOrder = async () => {
   try {
-    const response = await axios.post(`${API_BASE_URL}/create-order`, {
-      amount: 100, // ₹100 (in rupees)
-    });
-
-    // Redirect to checkout page URL returned from backend
+    // same-origin call to your Vercel Serverless Function (HTTPS, no CORS)
+    const response = await axios.post("/api/create-order", { amount: 150 });
     window.location.href = response.data.checkoutPageUrl;
   } catch (error) {
     console.error("Error creating order:", error);
     alert("❌ Failed to start payment. Please try again.");
   }
 };
+
+
 
 // const handlePayNow = () => {
 //   const options = {
