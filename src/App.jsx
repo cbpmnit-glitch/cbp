@@ -16,7 +16,6 @@ import PrivatePolicy from "./PrivacyPolicy";
 import TandC from "./TandC";
 import Cancellation from "./Cancellation";
 import Shipping from "./Shipping";
-import RegistrationForm from "./RegistrationForm";
 import Attendance from "./Attendance";
 import FormWithPayment from "./FormWithPayment";
 import PaymentSuccess from "./PaymentSuccess";
@@ -27,7 +26,7 @@ import AboutUS from "./AbousUS";
 import { Component } from "lucide-react";
 import QuizApp from "./quizinterface";
 import PaymentFailure from "./PaymentFailure";
-
+import Register_land from "./Register_land";
 // Main landing page component
 const HomePage = () => {
   return (
@@ -64,7 +63,7 @@ function App() {
         {/*Shipping page */}
         <Route path="/Shipping-Policy" element={<Shipping />} />
 
-        <Route path="/registration" element={<RegistrationForm />} />
+        <Route path="/registration" element={<Register_land />} />
 
         <Route path="/attendance" element={<Attendance />} />
     
