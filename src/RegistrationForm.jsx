@@ -29,7 +29,7 @@ export default function RegistrationForm() {
 const handlePayNow = () => {
   const options = {
     key: "rzp_live_R7WlLJ9Id7QZXL", // ✅ Your Razorpay key
-    amount: 100, // ₹1 = 100 paise
+    amount: 15000, // ₹1 = 100 paise
     currency: "INR",
     name: "CBP 6.0",
     description: "Registration Payment",
