@@ -8,7 +8,7 @@ import home_5 from "./images/home_5.jpg.png";
 const workshopData = [
   {
     image: home_1,
-    title: "Art of Self Management",
+    title: "Power of Habit",
     description:
       "Learn to balance personal and professional life, develop discipline, and master self-control for long-term success.",
     date: "05/09/2025",
@@ -38,7 +38,7 @@ const workshopData = [
   },
   {
     image: home_4,
-    title: "Lead with Resilience",
+    title: "Learn and Lead",
     description:
       "Gain knowledge on how continuous learning empowers leadership, decision-making, and inspires others to follow your vision.",
     date: "08/09/2025",
@@ -48,7 +48,7 @@ const workshopData = [
   },
   {
     image: home_5,
-    title: "Discover Yourself",
+    title: "Game of Mind",
     description:
       "Explore inner potential, spirituality, and values to lead a purposeful, peaceful, and impactful life.",
     date: "09/09/2025",
