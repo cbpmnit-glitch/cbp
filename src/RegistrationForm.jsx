@@ -39,14 +39,14 @@ const createOrder = async () => {
 
     // Step 1: Ask backend to create PhonePe order
     // const response = await axios.post("http://localhost:5000/create-order", { amount: 150 });
-    // const response = await axios.post("https://cbp-api.vercel.app/api/create-order", { amount: 150 });
-        const response = await axios.post("/api/create-order", { amount: 150 });
+    const response = await axios.post("https://cbp-api.vercel.app/create-order", { amount: 150 });
+        const response = await axios.post("/create-order", { amount: 150 });
     const { merchantOrderId, checkoutPageUrl } = response.data;
 
     // Step 2: Save PENDING entry in Sheets via backend
     // await axios.post("http://localhost:5000/save-pending", {
-    // await axios.post("https://cbp-api.vercel.app/api/save-pending", {
-    await axios.post("/api/save-pending", {
+    await axios.post("https://cbp-api.vercel.app/save-pending", {
+    await axios.post("/save-pending", {
       merchantOrderId,
       formData: data,
       paymentStatus: "PENDING",
@@ -107,7 +107,7 @@ const createOrder = async () => {
 
 const handleSubmit = async (data, redirect = false) => {
   try {
-    await axios.post("/api/save-pending", {
+    await axios.post("/save-pending", {
       merchantOrderId: `cash-${Date.now()}`,   // unique ID for cash
       formData: data,
       paymentStatus: "PAID",
