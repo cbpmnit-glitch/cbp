@@ -16,6 +16,11 @@ export default function PaymentSuccess() {
         const raw = localStorage.getItem("formData");
         if (!merchantOrderId || !raw) return;
 
+        if (localStorage.getItem("savePendingDone") === merchantOrderId) {
+          console.log("Already saved, skipping call.");
+          return;
+        }
+
         let formData;
         try {
           formData = JSON.parse(raw);
@@ -28,6 +33,8 @@ export default function PaymentSuccess() {
           formData,
           paymentStatus: "SUCCESS",
         });
+
+        localStorage.setItem("savePendingDone", merchantOrderId);
       } catch (err) {
         console.error("save-pending failed:", err);
       }
