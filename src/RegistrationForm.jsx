@@ -2,129 +2,67 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 
 export default function RegistrationForm() {
+  // keep base URL here only
+  const API_BASE_URL = "https://www.cbpmnit.in/api";
+
   const [studentType, setStudentType] = useState("");
   const [paymentMethod, setPaymentMethod] = useState("");
   const [submitEnabled, setSubmitEnabled] = useState(false);
 
-  // Fields
   const [dayAddress, setDayAddress] = useState("");
   const [hostelNum, setHostelNum] = useState("");
   const [roomNum, setRoomNum] = useState("");
-  const [bossName, setBossName] = useState("");
 
-  // Handle payment toggle
   useEffect(() => {
-  if (paymentMethod === "cash") {
-    setSubmitEnabled(true);
-  } else if (paymentMethod === "online") {
-    setSubmitEnabled(false); // keep disabled until Razorpay succeeds
-  } else {
-    setSubmitEnabled(false);
-  }
-}, [paymentMethod]);
+    if (paymentMethod === "cash") setSubmitEnabled(true);
+    else if (paymentMethod === "online") setSubmitEnabled(false); // enable after gateway success (if you add one)
+    else setSubmitEnabled(false);
+  }, [paymentMethod]);
 
-
-  // When Pay Online clicked → enable submit
-  // When Pay Online clicked → enable submit
-// When Pay Online clicked → enable submit
-const API_BASE_URL = import.meta.env.VITE_API_URL;
-const createOrder = async () => {
-  try {
-    // Collect form data from the form element
-    const formElement = document.querySelector("form");
-    const formData = new FormData(formElement);
-    const data = Object.fromEntries(formData.entries());
-
-    console.log("receivedd");
-
-    // Step 1: Ask backend to create PhonePe order
-    // const response = await axios.post("http://localhost:5000/create-order", { amount: 150 });
-    const response = await axios.post("https://cbp-api.vercel.app/create-order", { amount: 150 });
-        // const response = await axios.post("/create-order", { amount: 150 });
-    const { merchantOrderId, checkoutPageUrl } = response.data;
-
-    // Step 2: Save PENDING entry in Sheets via backend
-    // await axios.post("http://localhost:5000/save-pending", {
-    await axios.post("https://cbp-api.vercel.app/save-pending", {
-    // await axios.post("/save-pending", {
-      merchantOrderId,
-      formData: data,
-      paymentStatus: "PENDING",
-    });
-
-    // Step 3: Redirect user to PhonePe checkout
-    window.location.href = checkoutPageUrl;
-  } catch (error) {
-    console.error("Error creating order:", error);
-    alert("❌ Failed to start payment. Please try again.");
-  }
-};
-
-
-
-
-// const handlePayNow = () => {
-//   const options = {
-//     key: "rzp_live_R7WlLJ9Id7QZXL", // ✅ Your Razorpay key
-//     amount: 15000, // ₹1 = 100 paise
-//     currency: "INR",
-//     name: "CBP 6.0",
-//     description: "Registration Payment",
-//     handler: function (response) {
-//       alert("✅ Payment successful! Submitting your form...");
-
-//       // Collect form data
-//       const formElement = document.querySelector("form");
-//       const formData = new FormData(formElement);
-//       const data = Object.fromEntries(formData.entries());
-
-//       // Add Razorpay payment ID
-//       data.razorpay_payment_id = response.razorpay_payment_id;
-
-//       // Call React's handleSubmit directly
-//       handleSubmit(data, true); // true = redirect after submit
-//     },
-//     modal: {
-//       ondismiss: function () {
-//         alert("❌ Payment was not completed. Please try again.");
-//       },
-//     },
-//     theme: { color: "#3399cc" },
-//   };
-
-//   const rzp1 = new window.Razorpay(options);
-//   rzp1.open();
-// };
-
-
-
-
-  // Restrict phone number input
   const handlePhoneChange = (e) => {
-    let val = e.target.value.replace(/[^0-9]/g, "").slice(0, 10);
+    const val = e.target.value.replace(/[^0-9]/g, "").slice(0, 10);
     e.target.value = val;
   };
 
-const handleSubmit = async (data, redirect = false) => {
-  try {
-    await axios.post("/save-pending", {
-      merchantOrderId: `cash-${Date.now()}`,   // unique ID for cash
-      formData: data,
-      paymentStatus: "PAID",
-    });
+  const createOrder = async () => {
+    try {
+      const formEl = document.querySelector("form");
+      const formData = new FormData(formEl);
+      const data = Object.fromEntries(formData.entries());
 
-    alert("✅ Form submitted successfully!");
+      // 1) create order
+      const res = await axios.post(`${API_BASE_URL}/create-order`, { amount: 150 });
+      const { merchantOrderId, checkoutPageUrl } = res.data;
 
-    if (redirect) {
-      window.location.href = "/payment-success"; 
+      // 2) save pending
+      await axios.post(`${API_BASE_URL}/save-pending`, {
+        merchantOrderId,
+        formData: data,
+        paymentStatus: "PENDING",
+      });
+
+      // 3) redirect to gateway
+      window.location.href = checkoutPageUrl;
+    } catch (err) {
+      console.error("Error creating order:", err);
+      alert("Failed to start payment. Please try again.");
     }
-  } catch (error) {
-    console.error("Error submitting form:", error);
-    alert("❌ Something went wrong while submitting the form.");
-  }
-};
+  };
 
-
+  const handleSubmit = async (data, redirect = false) => {
+    try {
+      await axios.post(`${API_BASE_URL}/save-pending`, {
+        merchantOrderId: `cash-${Date.now()}`,
+        formData: data,
+        paymentStatus: "PAID",
+      });
+      alert("Form submitted successfully!");
+      if (redirect) window.location.href = "/payment-success";
+    } catch (err) {
+      console.error("Error submitting form:", err);
+      alert("Something went wrong while submitting the form.");
+    }
+  };
 
   return (
     <div className="max-w-2xl mx-auto mt-10 bg-white p-8 rounded-xl shadow-lg border-t-8 border-blue-600">
@@ -133,19 +71,16 @@ const handleSubmit = async (data, redirect = false) => {
       </h2>
 
       <form
-  onSubmit={(e) => {
-    e.preventDefault();
-    const formData = new FormData(e.target);
-    const data = Object.fromEntries(formData.entries());
-
-    if (paymentMethod === "cash") {
-      // Directly save cash as PAID
-      handleSubmit({ ...data, paymentStatus: "PAID" }, true);
-    }
-  }}
-  className="space-y-4"
->
-
+        onSubmit={(e) => {
+          e.preventDefault();
+          const fd = new FormData(e.target);
+          const data = Object.fromEntries(fd.entries());
+          if (paymentMethod === "cash") {
+            handleSubmit({ ...data, paymentStatus: "PAID" }, true);
+          }
+        }}
+        className="space-y-4"
+      >
         <div>
           <label className="font-bold text-blue-900 block">Full Name</label>
           <input
@@ -158,9 +93,7 @@ const handleSubmit = async (data, redirect = false) => {
         </div>
 
         <div>
-          <label className="font-bold text-blue-900 block">
-            Institute ID Number
-          </label>
+          <label className="font-bold text-blue-900 block">Institute ID Number</label>
           <input
             type="text"
             name="idNumber"
@@ -171,9 +104,7 @@ const handleSubmit = async (data, redirect = false) => {
         </div>
 
         <div>
-          <label className="font-bold text-blue-900 block">
-            Mobile Number (WhatsApp)
-          </label>
+          <label className="font-bold text-blue-900 block">Mobile Number (WhatsApp)</label>
           <input
             type="tel"
             name="mobile"
@@ -189,7 +120,7 @@ const handleSubmit = async (data, redirect = false) => {
         <div>
           <label className="font-bold text-blue-900 block">Course</label>
           <select
-          name="course"
+            name="course"
             required
             className="w-full p-2 border border-blue-300 rounded-md focus:ring-2 focus:ring-blue-600"
           >
@@ -226,7 +157,7 @@ const handleSubmit = async (data, redirect = false) => {
             <option>Materials Research Centre</option>
             <option>National Centre for Disaster Mitigation & Management</option>
             <option>Centre for Rural Development</option>
-            <option>Centre for Cyber Security</option>
+            <option>Centre for Cyber Security</option>
           </select>
         </div>
 
@@ -247,9 +178,7 @@ const handleSubmit = async (data, redirect = false) => {
         </div>
 
         <div>
-          <label className="font-bold text-blue-900 block">
-            Day Scholar / Hosteller
-          </label>
+          <label className="font-bold text-blue-900 block">Day Scholar / Hosteller</label>
           <select
             name="studentType"
             value={studentType}
@@ -281,9 +210,7 @@ const handleSubmit = async (data, redirect = false) => {
         {studentType === "hostel" && (
           <div className="flex gap-4">
             <div className="flex-1">
-              <label className="font-bold text-blue-900 block">
-                Hostel Number
-              </label>
+              <label className="font-bold text-blue-900 block">Hostel Number</label>
               <input
                 type="number"
                 name="hostelNum"
@@ -298,7 +225,7 @@ const handleSubmit = async (data, redirect = false) => {
               <label className="font-bold text-blue-900 block">Room Number</label>
               <input
                 type="text"
-                name="roomNum" 
+                name="roomNum"
                 value={roomNum}
                 onChange={(e) => setRoomNum(e.target.value)}
                 placeholder="Room no."
@@ -325,35 +252,33 @@ const handleSubmit = async (data, redirect = false) => {
         </div>
 
         {paymentMethod === "online" && (
-  <div className="mt-2">
-    <p className="text-blue-900 font-bold">Pay ₹150 Online</p>
-    <button
-      type="button"
-      onClick={createOrder}
-      className="bg-blue-600 text-white px-4 py-2 rounded-md font-bold hover:bg-blue-900"
-    >
-      Pay Online
-    </button>
-  </div>
-)}
+          <div className="mt-2">
+            <p className="text-blue-900 font-bold">Pay ₹150 Online</p>
+            <button
+              type="button"
+              onClick={createOrder}
+              className="bg-blue-600 text-white px-4 py-2 rounded-md font-bold hover:bg-blue-900"
+            >
+              Pay Online
+            </button>
+          </div>
+        )}
 
         {paymentMethod === "cash" && (
           <div className="mt-2">
             <p className="text-blue-900 font-bold">Pay ₹150</p>
             <input
-            type="text"
-            name="bossName"
-            placeholder="Write Volunteer's Name whom you have given cash"
-            required
-            className="w-full p-2 border border-blue-300 rounded-md focus:ring-2 focus:ring-blue-600"
-          />
+              type="text"
+              name="bossName"
+              placeholder="Write Volunteer's Name whom you have given cash"
+              required
+              className="w-full p-2 border border-blue-300 rounded-md focus:ring-2 focus:ring-blue-600"
+            />
           </div>
         )}
 
         <div>
-          <label className="font-bold text-blue-900 block">
-            Expectations from the event
-          </label>
+          <label className="font-bold text-blue-900 block">Expectations from the event</label>
           <textarea
             name="expectations"
             placeholder="Write your expectations..."
