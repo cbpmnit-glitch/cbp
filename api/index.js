@@ -69,6 +69,7 @@ app.post('/save-pending', async (req, res) => {
             ...formData,
             merchantOrderId,
             paymentStatus: paymentStatus || "PENDING",
+            transactionTime: new Date().toISOString()
         };
 
         // Send data to your Google Apps Script Web App
