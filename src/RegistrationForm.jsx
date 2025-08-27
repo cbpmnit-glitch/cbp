@@ -31,11 +31,11 @@ export default function RegistrationForm() {
       const data = Object.fromEntries(formData.entries());
 
       // 1) create order
-      const res = await axios.post(`${API_BASE_URL}/create-order`, { amount: 150 });
+      const res = await axios.post('https://cbp-api.vercel.app/create-order', { amount: 150 });
       const { merchantOrderId, checkoutPageUrl } = res.data;
 
       // 2) save pending
-      await axios.post(`${API_BASE_URL}/save-pending`, {
+      await axios.post('https://cbp-api.vercel.app/save-pending', {
         merchantOrderId,
         formData: data,
         paymentStatus: "PENDING",
@@ -51,7 +51,7 @@ export default function RegistrationForm() {
 
   const handleSubmit = async (data, redirect = false) => {
     try {
-      await axios.post(`${API_BASE_URL}/save-pending`, {
+      await axios.post('https://cbp-api.vercel.app/save-pending', {
         merchantOrderId: `cash-${Date.now()}`,
         formData: data,
         paymentStatus: "PAID",
