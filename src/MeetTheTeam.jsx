@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "./navbar";
 import Footer from "./footer";
 import EducatorCard from "./EducatorCard";
-import HardikDhoot from "./images/Hardik.png";
+import HardikDhoot from "./images/HardikDhoot.png";
 import ParvAgrawal from "./images/ParvAgrawal.png";
 import RakshitJain from "./images/RakshitJain.png";
 import AdityaRoy from "./images/AdityaRoy.png";

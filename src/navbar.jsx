@@ -60,7 +60,10 @@ const Navbar = () => {
     } else if (sectionId === "About Us") {
       navigate("/About-us");
     } 
-    if(sectionId === "Meet The Team"){
+    else if (sectionId === "RegistrationForm") {
+      navigate("/maintainance");
+    } 
+    else if(sectionId === "Meet The Team"){
       navigate("/MeetTheTeam");
     } 
      else if (sectionId === "History") {

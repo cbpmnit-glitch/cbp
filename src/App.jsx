@@ -27,6 +27,7 @@ import { Component } from "lucide-react";
 import QuizApp from "./quizinterface";
 import PaymentFailure from "./PaymentFailure";
 import Register_land from "./Register_land";
+import RegistrationForm from "./RegistrationForm";
 // Main landing page component
 const HomePage = () => {
   return (
@@ -64,6 +65,8 @@ function App() {
         <Route path="/Shipping-Policy" element={<Shipping />} />
 
         <Route path="/registration" element={<Register_land />} />
+
+        <Route path="/maintainance" element={<RegistrationForm/>} />
 
         <Route path="/attendance" element={<Attendance />} />
     
