@@ -34,12 +34,14 @@ export default function RegistrationForm() {
       const res = await axios.post('https://cbp-api.vercel.app/create-order', { amount: 150 });
       const { merchantOrderId, checkoutPageUrl } = res.data;
 
+      localStorage.setItem("formData",data);
+
       // 2) save pending
-      await axios.post('https://cbp-api.vercel.app/save-pending', {
-        merchantOrderId,
-        formData: data,
-        paymentStatus: "PENDING",
-      });
+      // await axios.post('https://cbp-api.vercel.app/save-pending', {
+      //   merchantOrderId,
+      //   formData: data,
+      //   paymentStatus: "PENDING",
+      // });
 
       // 3) redirect to gateway
       window.location.href = checkoutPageUrl;
