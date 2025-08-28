@@ -64,9 +64,9 @@ function App() {
         {/*Shipping page */}
         <Route path="/Shipping-Policy" element={<Shipping />} />
 
-        <Route path="/registration" element={<Register_land />} />
+        <Route path="/registration" element={<RegistrationForm/>} />
 
-        <Route path="/maintainance" element={<RegistrationForm/>} />
+        <Route path="/maintainance" element={<Register_land/>} />
 
         <Route path="/attendance" element={<Attendance />} />
     
