@@ -32,7 +32,7 @@ export default function RegistrationForm() {
       const data = Object.fromEntries(formData.entries());
 
       // 1) create order
-      const res = await axios.post('https://cbp-api.vercel.app/create-order', { amount: 150 });
+      const res = await axios.post('https://cbp-api.vercel.app/create-order', { amount: 15000 });
       const { merchantOrderId, checkoutPageUrl } = res.data;
 
       const formValues = {
