@@ -302,7 +302,7 @@ export default function RegistrationForm() {
           type="submit"
           disabled={!submitEnabled || isSubmitting}
           className={`w-full py-3 rounded-md text-white text-lg font-bold ${
-            submitEnabled
+            submitEnabled || isSubmitting
               ? "bg-blue-600 hover:bg-blue-900 cursor-pointer"
               : "bg-blue-300 cursor-not-allowed"
           }`}
