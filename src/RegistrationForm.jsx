@@ -62,7 +62,10 @@ export default function RegistrationForm() {
       setIsSubmitting(true);
       await axios.post('https://cbp-api.vercel.app/save-pending', {
         merchantOrderId: `cash-${Date.now()}`,
-        formData: data,
+        formData: {
+    ...data,
+    transactionTime: new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }),
+  },
         paymentStatus: "PAID",
       });
       alert("Form submitted successfully!");
