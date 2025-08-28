@@ -69,7 +69,7 @@ app.post('/save-pending', async (req, res) => {
             ...formData,
             merchantOrderId,
             paymentStatus: paymentStatus || "PENDING",
-            transactionTime: new Date().toISOString()
+            transactionTime: new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" })
         };
 
         // Send data to your Google Apps Script Web App
