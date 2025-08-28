@@ -16,6 +16,11 @@ export default function PaymentSuccess() {
         const raw = localStorage.getItem("formData");
         if (!merchantOrderId || !raw) return;
 
+        if (localStorage.getItem("savePendingDone") === merchantOrderId) {
+          console.log("Already saved, skipping call.");
+          return;
+        }
+
         let formData;
         try {
           formData = JSON.parse(raw);
@@ -25,9 +30,15 @@ export default function PaymentSuccess() {
 
         await axios.post("https://cbp-api.vercel.app/save-pending", {
           merchantOrderId,
-          formData,
+          formData :
+          {
+            ...formData,
+            transactionTime: new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }),
+          },
           paymentStatus: "SUCCESS",
         });
+
+        localStorage.setItem("savePendingDone", merchantOrderId);
       } catch (err) {
         console.error("save-pending failed:", err);
       }

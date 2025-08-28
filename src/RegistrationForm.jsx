@@ -8,6 +8,7 @@ export default function RegistrationForm() {
   const [studentType, setStudentType] = useState("");
   const [paymentMethod, setPaymentMethod] = useState("");
   const [submitEnabled, setSubmitEnabled] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const [dayAddress, setDayAddress] = useState("");
   const [hostelNum, setHostelNum] = useState("");
@@ -34,7 +35,12 @@ export default function RegistrationForm() {
       const res = await axios.post('https://cbp-api.vercel.app/create-order', { amount: 150 });
       const { merchantOrderId, checkoutPageUrl } = res.data;
 
-      localStorage.setItem("formData", JSON.stringify(data));
+      const formValues = {
+        ...data,
+        transactionTime: new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }),
+      };
+
+      localStorage.setItem("formData", JSON.stringify(formValues));
 
       // 2) save pending
       // await axios.post('https://cbp-api.vercel.app/save-pending', {
@@ -53,6 +59,7 @@ export default function RegistrationForm() {
 
   const handleSubmit = async (data, redirect = false) => {
     try {
+      setIsSubmitting(true);
       await axios.post('https://cbp-api.vercel.app/save-pending', {
         merchantOrderId: `cash-${Date.now()}`,
         formData: data,
@@ -63,6 +70,8 @@ export default function RegistrationForm() {
     } catch (err) {
       console.error("Error submitting form:", err);
       alert("Something went wrong while submitting the form.");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -291,9 +300,9 @@ export default function RegistrationForm() {
 
         <button
           type="submit"
-          disabled={!submitEnabled}
+          disabled={!submitEnabled || isSubmitting}
           className={`w-full py-3 rounded-md text-white text-lg font-bold ${
-            submitEnabled
+            submitEnabled || isSubmitting
               ? "bg-blue-600 hover:bg-blue-900 cursor-pointer"
               : "bg-blue-300 cursor-not-allowed"
           }`}
