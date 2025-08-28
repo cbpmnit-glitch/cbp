@@ -37,7 +37,7 @@ export default function RegistrationForm() {
 
       const formValues = {
         ...data,
-        transactionTime: new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }),
+        transactionTime: new Date().toISOString()
       };
 
       localStorage.setItem("formData", JSON.stringify(formValues));
@@ -64,7 +64,7 @@ export default function RegistrationForm() {
         merchantOrderId: `cash-${Date.now()}`,
         formData: {
     ...data,
-    transactionTime: new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }),
+    transactionTime: new Date().toISOString()
   },
         paymentStatus: "PAID",
       });
