@@ -41,7 +41,7 @@ const EducatorsSection = () => {
 
       <div className="mt-10">
 <button className="bg-[#a1735b] text-white px-8 py-2 rounded-full hover:bg-[#865b44] transition">
-  <Link to="/MeetTheTeam">View Entire Team</Link>
+  <Link to="/MeetTheTeam" onClick={() => window.scrollTo(0, 0)}>View Entire Team</Link>
 </button>
       </div>
     </section>

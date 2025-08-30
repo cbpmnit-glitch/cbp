@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import main_element from './images/mainElement.png'
-
+import { Link } from 'react-router-dom';
 const Container = () => {
   // const videoRef = useRef(null);
   // const [isPlaying, setIsPlaying] = useState(true);
@@ -35,12 +35,12 @@ const Container = () => {
 
         {/* Explore Button */}
         <button className="bg-[#015b98] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#033861]">
-          <a
-  href="./registration"
+<Link
+  to="/registration"
   className="bg-[#015b98] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#033861]"
 >
   Buy Tickets - ₹150
-</a>
+</Link>
 
         </button>
 
