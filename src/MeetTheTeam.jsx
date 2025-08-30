@@ -22,7 +22,6 @@ import RushilSinha from "./images/RushilSinha.png";
 import TusharChoudhary from "./images/TusharChoudhary.png";
 import VimalDubey from "./images/VimalDubey.png";
 import VivekTapraniya from "./images/VivekTapraniya.png";
-import HardikDhoot from "./images/HardikDhoot.png";
 
 const educatorsByYear = {
   "2rd Year Team": [
