@@ -44,7 +44,7 @@ function App() {
   
 
   return (
-    <Router>
+    <Router basename="/version6">
       <Routes>
         {/* Home page */}
         <Route path="/" element={<HomePage />} />
