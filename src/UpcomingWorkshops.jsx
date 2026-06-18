@@ -8,11 +8,11 @@ import home_5 from "./images/home_5.jpg.png";
 const workshopData = [
   {
     image: home_1,
-    title: "Power of Habit",
+    title: "Amazing Secrets of Life",
     description:
       "Learn to balance personal and professional life, develop discipline, and master self-control for long-term success.",
     date: "05/09/2025",
-    duration: "6-8 pm",
+    duration: "6pm to 7:30 pm",
     speaker: "Mr. Munish Nandwani",
     isSignature: true,
   },
@@ -22,27 +22,27 @@ const workshopData = [
     description:
       "Understand how effective communication builds trust, strengthens relationships, and enhances leadership skills in every field of life.",
     date: "06/09/2025",
-    duration: "6-8 pm",
+    duration: "6pm to 7:30 pm",
     speaker: "Mr. Mahesh Punjabi",
     isSignature: true,
   },
   {
     image: home_3,
-    title: "Secret of Success",
+    title: "Mantra of Success",
     description:
       "Discover the importance of persistence, hard work, and mindset in achieving professional and personal milestones.",
     date: "07/09/2025",
-    duration: "6-8 pm",
+    duration: "11am to 1pm",
     speaker: "Adv. Anuj Saxena",
     isSignature: true,
   },
   {
     image: home_4,
-    title: "Learn and Lead",
+    title: "Power of Discipline",
     description:
       "Gain knowledge on how continuous learning empowers leadership, decision-making, and inspires others to follow your vision.",
     date: "08/09/2025",
-    duration: "6-8 pm",
+    duration: "6pm to 7:30 pm",
     speaker: "Dr. Anupama Soni",
     isSignature: true,
   },
@@ -52,7 +52,7 @@ const workshopData = [
     description:
       "Explore inner potential, spirituality, and values to lead a purposeful, peaceful, and impactful life.",
     date: "09/09/2025",
-    duration: "6-8 pm",
+    duration: "6pm to 7:30 pm",
     speaker: "HG Hari Bhakti Das",
     isSignature: true,
   },

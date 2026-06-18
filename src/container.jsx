@@ -1,83 +1,55 @@
-import React, { useRef, useState } from 'react';
-import main_element from './images/mainElement.png'
+import React from 'react';
+import main_element from './images/mainElement.png';
+import { Link } from 'react-router-dom';
+import EventTimer from "./EventTimer";
 
 const Container = () => {
-  // const videoRef = useRef(null);
-  // const [isPlaying, setIsPlaying] = useState(true);
-
-  // const togglePlay = () => {
-  //   const video = videoRef.current;
-  //   if (video.paused) {
-  //     video.play();
-  //     setIsPlaying(true);
-  //   } else {
-  //     video.pause();
-  //     setIsPlaying(false);
-  //   }
-  // };
-
   return (
-    <section id='Home' className="bg-[#d0e1ee]  pt-30  py-12 px-8 md:px-20 flex flex-col md:flex-row items-center justify-between min-h-[90vh] ">
-      <div className="max-w-lg space-y-6 text-center md:text-left md:ml-10">
+    <section
+      id='Home'
+      className="bg-[#d0e1ee] pt-30 py-12 px-4 md:px-20 
+                 flex flex-col md:flex-row items-center md:justify-between 
+                 min-h-[90vh] overflow-hidden"
+    >
+      {/* Left Content */}
+      <div className="w-full md:max-w-lg space-y-6 text-center md:text-left md:ml-10">
         {/* Logo and Title */}
         <div className="flex items-center space-x-3 justify-center md:justify-start">
-          <div className="w-8 h-8 rounded-full border-2 border-[#015b98]"></div>
+
           <div>
             <h2 className="text-2xl font-semibold text-[#015b98]">Capacity Building</h2>
-            <h2 className="text-xl text-gray-600 -mt-1"> Program </h2>
+            <h2 className="text-xl text-gray-600 -mt-1">Program</h2>
           </div>
         </div>
 
         {/* Description */}
-        <p className="text-gray-700 text-lg">
-          is a comphrehensive 5 days Soft Skills Development Program organized by Department of Humanities and Social Sciences in collaboration with the Training and Placement Cell MNIT Jaipur to develop industry demanding Skills
+        <p className="text-gray-700 text-base sm:text-lg leading-relaxed break-words px-2 md:px-0">
+          This is a comprehensive 5 days Soft Skills Development Program organized by the
+          Department of Humanities and Social Sciences in collaboration with the
+          Training and Placement Cell MNIT Jaipur to develop industry-demanding Skills.
         </p>
 
-        {/* Explore Button */}
-        <button className="bg-[#015b98] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#033861]">
-          <a
-  href="./registration"
-  className="bg-[#015b98] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#033861]"
->
-  Buy Tickets - ₹150
-</a>
+        {/* Buy Tickets Button */}
+        <Link
+          to="/registration"
+          className="inline-block bg-[#015b98] text-white px-6 sm:px-8 py-3 rounded-full font-semibold hover:bg-[#033861]"
+        >
+          Buy Ticket - ₹150
+        </Link>
 
-        </button>
-
-        {/* Stats Section */}
-        <div className="flex flex-col sm:flex-row justify-center md:justify-start gap-4 mt-6">
-          <div className="bg-white shadow-md px-6 py-4 rounded-xl text-center">
-            <h3 className="text-xl font-bold text-[#0674be]">1,00,000+</h3>
-            <p className="text-sm text-gray-600">Impressions</p>
-          </div>
-          <div className="bg-white shadow-md px-6 py-4 rounded-xl text-center">
-            <h3 className="text-xl font-bold text-[#0674be]">20+</h3>
-            <p className="text-sm text-gray-600">Total Speakers</p>
-          </div>
-          <div className="bg-white shadow-md px-6 py-4 rounded-xl text-center">
-            <h3 className="text-xl font-bold text-[#0674be]">1500+</h3>
-            <p className="text-sm text-gray-600">Workshop Attendees</p>
-          </div>
+        {/* Timer Section */}
+        <div className="mt-6 w-full">
+          <EventTimer />
         </div>
       </div>
 
-      {/* Right Section (Video) */}
-      <div className="mt-10 md:mt-0 md:mr-5 md:ml-5 relative">
-        <img src ={main_element}   className="rounded-3xl w-[320px] md:w-[700px] shadow-lg"></img>
-        {/* <video
-          ref={videoRef}
-          src="https://www.w3schools.com/html/mov_bbb.mp4" // Replace with your actual video URL
-          autoPlay
-          loop
-          muted
-          className="rounded-3xl w-[320px] md:w-[700px] shadow-lg"
-        ></video>
-        <button
-          onClick={togglePlay}
-          className="absolute bottom-4 right-4 bg-white border border-[#015b98] text-[#015b98] px-4 py-2 rounded-full shadow hover:bg-gray-100"
-        >
-          {isPlaying ? 'Pause' : 'Play'}
-        </button> */}
+      {/* Right Section (Image) */}
+      <div className="mt-10 md:mt-0 md:mr-5 md:ml-5 relative w-full flex justify-center">
+        <img
+          src={main_element}
+          alt="Main Element"
+          className="rounded-3xl w-full max-w-xs sm:max-w-md md:max-w-[700px] shadow-lg"
+        />
       </div>
     </section>
   );

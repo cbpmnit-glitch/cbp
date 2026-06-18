@@ -1,33 +1,38 @@
 import React from "react";
 import EducatorCard from "./EducatorCard";
-
+import harsh from "./images/harsh.png";
+import nikesh from "./images/nikesh.png";
+import ashana from "./images/ashana.png";
+import nikhil from "./images/nikhil.png";
+import ansh from "./images/ansh.png";
+import priyanka from "./images/priyanka.png";
+import { Link } from 'react-router-dom';
 const educators = [
   {
-    name: "MS dhoni",
+    name: "Priyanka Kumari",
     role: "Co-founder",
-    image: "https://webnew.satvicmovement.org/images/meet-the-team/team/rajat.webp",
+    image: priyanka,
   },
   {
-    name: "MS dhoni",
+    name: "Harsh Rawat",
     role: "Co-founder",
-    image: "https://webnew.satvicmovement.org/images/meet-the-team/team/rajat.webp",
+    image: harsh,
   },
   {
-    name: "MS dhoni",
+    name: "Nikhil Chouhan",
     role: "Co-founder",
-    image: "https://webnew.satvicmovement.org/images/meet-the-team/team/rajat.webp",
+    image: nikhil,
   },
   {
-    name: "MS dhoni",
+    name: "Nikesh Sirvi",
     role: "Co-founder",
-    image: "https://webnew.satvicmovement.org/images/meet-the-team/team/rajat.webp",
+    image: nikesh,
   },
   {
-    name: "MS dhoni",
+    name: "Ashana Meena",
     role: "Co-founder",
-    image: "https://webnew.satvicmovement.org/images/meet-the-team/team/rajat.webp",
-  },
-
+    image: ashana,
+  }
 ];
 
 const EducatorsSection = () => {
@@ -42,9 +47,9 @@ const EducatorsSection = () => {
       </div>
 
       <div className="mt-10">
-        <button className="bg-[#a1735b] text-white px-8 py-2 rounded-full hover:bg-[#865b44] transition">
-          <a href="./MeetTheTeam">View Entire Team</a>
-        </button>
+<button className="bg-[#a1735b] text-white px-8 py-2 rounded-full hover:bg-[#865b44] transition">
+  <Link to="/MeetTheTeam" onClick={() => window.scrollTo(0, 0)}>View Entire Team</Link>
+</button>
       </div>
     </section>
   );

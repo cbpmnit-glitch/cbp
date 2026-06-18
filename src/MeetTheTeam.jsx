@@ -20,8 +20,13 @@ import NaveenSaini from "./images/NaveenSaini.png";
 import NehaTripathi from "./images/NehaTripathi.png";
 import RushilSinha from "./images/RushilSinha.png";
 import TusharChoudhary from "./images/TusharChoudhary.png";
-import VimalDubey from "./images/VimalDubey.png";
 import VivekTapraniya from "./images/VivekTapraniya.png";
+import RubyGupta from "./images/Ruby Gupta.png";
+import KrupaJoshi from "./images/KrupaJoshi.png";
+import AkashKumar from "./images/Akash Kumar.png";
+import BalveerSaini from "./images/BalveerSaini.png";
+import KushalGarg from "./images/KushalGarg.png";
+import VimalDubey from "./images/VimalDubey.png";
 
 const educatorsByYear = {
   "2rd Year Team": [
@@ -31,7 +36,7 @@ const educatorsByYear = {
       image: HardikDhoot,
     },
     {
-      name: "Parv Agarwal",
+      name: "Parv Agrawal",
       role: "Designing secretary",
       image: ParvAgrawal,
     },
@@ -46,6 +51,11 @@ const educatorsByYear = {
       image: KoshalSharma,
     },
     {
+      name: "Rushil Sinha",
+      role: "Co-Leader of Yoga Wing",
+      image: RushilSinha,
+    },
+    {
       name: "Neha Tripathi",
       role: "Co-Leader of Yoga Wing",
       image: NehaTripathi,
@@ -56,6 +66,21 @@ const educatorsByYear = {
       image: NaveenSaini,
     },
     {
+      name: "Kushal Garg",
+      role: "Co-Leader of Yoga Wing",
+      image: KushalGarg,
+    },
+    {
+      name: "Vimal Dubey",
+      role: "Co-Leader of Yoga Wing",
+      image: VimalDubey,
+    },
+    {
+      name: "Vivek Tapaniya",
+      role: "Co-Leader of Yoga Wing",
+      image: VivekTapraniya,
+    },
+    {
       name: "Krishna Agarwal",
       role: "Co-Leader of Yoga Wing",
       image: KrishnaAgarwal,
@@ -64,6 +89,11 @@ const educatorsByYear = {
       name: "Rakshit Jain",
       role: "Co-Leader of Yoga Wing",
       image: RakshitJain,
+    },
+    {
+      name: "Balveer Saini",
+      role: "Co-Leader of Yoga Wing",
+      image: BalveerSaini,
     },
     {
       name: "Komal Wankhede",
@@ -96,7 +126,7 @@ const educatorsByYear = {
       image: BhaveshYadav,
     },
     {
-      name: "Bhavesh Narnoliya",
+      name: "Bhavesh Narnolia",
       role: "Co-Leader of Yoga Wing",
       image: BhaveshNarnoliya,
     },
@@ -106,9 +136,24 @@ const educatorsByYear = {
       image: AdityaRoy,
     },
     {
+      name: "Ruby Gupta",
+      role: "Co-Leader of Yoga Wing",
+      image: RubyGupta,
+    },
+    {
       name: "Aryan Raj",
       role: "Co-Leader of Yoga Wing",
       image: AryanRaj,
+    },
+    {
+      name: "Krupa Joshi",
+      role: "Co-Leader of Yoga Wing",
+      image: KrupaJoshi,
+    },
+    {
+      name: "Akash Kumar",
+      role: "Co-Leader of Yoga Wing",
+      image: AkashKumar,
     },
   ],
 };

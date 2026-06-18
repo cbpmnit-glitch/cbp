@@ -26,20 +26,18 @@ const WorkshopCard = ({
 
         {isSignature && (
           <span className="inline-block bg-orange-100 text-yellow-900 px-2 py-1 text-xs rounded-full mb-2">
-            🌟 Signature Workshop
+            ⭐{speaker}
           </span>
         )}
 
         <p className="text-gray-700 mb-4">{description}</p>
 
         <div className="text-sm flex flex-row sm:flex-row flex-wrap justify-center md:justify-start gap-2 md:gap-3 ">
-          <span>
-            👲{speaker}
-          </span>
+
           <span>
             ⏳ {duration}
           </span>
-          <span>📅- 
+          <span>📅
              {date}
           </span>
         </div>

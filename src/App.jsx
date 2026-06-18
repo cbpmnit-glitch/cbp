@@ -28,13 +28,19 @@ import QuizApp from "./quizinterface";
 import PaymentFailure from "./PaymentFailure";
 import Register_land from "./Register_land";
 import RegistrationForm from "./RegistrationForm";
+import EventTimer from "./EventTimer";
+import { Analytics } from "@vercel/analytics/react"
+import Faculty from "./Faculty";
 // Main landing page component
 const HomePage = () => {
   return (
     <>
+      <Analytics/>
       <Navbar />
       <Container />
       <UpcomingWorkshops />
+      <Faculty/>
+      <EducatorsSection/>
       <Footer />
     </>
   );
@@ -64,9 +70,9 @@ function App() {
         {/*Shipping page */}
         <Route path="/Shipping-Policy" element={<Shipping />} />
 
-        <Route path="/registration" element={<Register_land />} />
+        <Route path="/registration" element={<RegistrationForm/>} />
 
-        <Route path="/maintainance" element={<RegistrationForm/>} />
+        <Route path="/maintainance" element={<Register_land/>} />
 
         <Route path="/attendance" element={<Attendance />} />
     
