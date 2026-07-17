@@ -70,6 +70,8 @@ const Navbar = () => {
       navigate("/History");
     } else if (sectionId === "Store") {
       navigate("/Store");
+    } else if (sectionId === "CBP 6.0") {
+      window.location.href = "/version6";
     } else {
       const section = document.getElementById(sectionId);
       if (section) section.scrollIntoView({ behavior: "smooth" });
@@ -85,10 +87,13 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScrollClose);
   }, [isOpen]);
 
+  const isVersion6 = window.location.pathname.startsWith("/version6");
+
   const navItems = [
     { name: "Home" },
     { name: "Meet The Team", dropdown: ["Free eBooks", "Physical Books"] },
     { name: "About Us", dropdown: ["Kitchen Tools", "Natural Supplements"] },
+    ...(!isVersion6 ? [{ name: "CBP 6.0" }] : []),
   ];
 
   const toggleDropdown = (name) => {

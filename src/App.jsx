@@ -47,10 +47,11 @@ const HomePage = () => {
 };
 
 function App() {
-  
+  const isVersion6 = window.location.pathname.startsWith("/version6");
+  const basename = isVersion6 ? "/version6" : "/";
 
   return (
-    <Router basename="/version6">
+    <Router basename={basename}>
       <Routes>
         {/* Home page */}
         <Route path="/" element={<HomePage />} />
