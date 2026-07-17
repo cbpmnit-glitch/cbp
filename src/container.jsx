@@ -13,20 +13,6 @@ const Container = () => {
     >
       {/* Left Content */}
       <div className="w-full md:max-w-lg space-y-6 text-center md:text-left md:ml-10">
-        {/* Previous Edition Redirection Badge */}
-        {!window.location.pathname.startsWith('/version6') && (
-          <div 
-            onClick={() => window.location.href = '/version6'}
-            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#015b98]/10 text-[#015b98] text-xs sm:text-sm font-medium hover:bg-[#015b98]/20 transition-all duration-200 cursor-pointer border border-[#015b98]/20 w-fit mx-auto md:mx-0"
-          >
-            <span className="flex h-2 w-2 rounded-full bg-[#015b98] animate-pulse"></span>
-            <span>Looking for CBP 6.0?</span>
-            <span className="font-semibold underline hover:text-[#033861]">
-              View Previous Edition →
-            </span>
-          </div>
-        )}
-
         {/* Logo and Title */}
         <div className="flex items-center space-x-3 justify-center md:justify-start">
 

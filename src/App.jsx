@@ -3,6 +3,7 @@ import "./App.css";
 import { useEffect } from "react";   // ✅ import useEffect
 import Navbar from "./navbar";
 import Container from "./container";
+import RedirectPage from "./RedirectPage";
 import WorkshopCard from "./WorkshopCard";
 import UpcomingWorkshops from "./UpcomingWorkshops";
 import BookCard from "./BookCard";
@@ -33,6 +34,12 @@ import { Analytics } from "@vercel/analytics/react"
 import Faculty from "./Faculty";
 // Main landing page component
 const HomePage = () => {
+  const isVersion6 = window.location.pathname.startsWith("/version6");
+
+  if (!isVersion6) {
+    return <RedirectPage />;
+  }
+
   return (
     <>
       <Analytics/>
